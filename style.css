@@ -1,0 +1,230 @@
+/* Resetowanie domyślnych stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styl dla całej strony */
+body {
+    background-color: #F5F5F5;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    height: 8rem;
+    background-color: #fff;
+    position: relative;
+}
+
+.up-section {
+    position: absolute;
+    width: 100%;
+    height: 4.625rem;
+    background-color: #fff;
+    border-bottom: 1px solid #BFBFBF;
+    display: flex;
+    justify-content: center;
+}
+
+.in-section {
+    width: 85.4375rem;
+    height: 100%;
+    display: flex;
+}
+
+a.logo {
+    text-decoration: none; /* Usuwa podkreślenie */
+  }
+  
+
+.logo {
+    position: relative; /* Używamy relative, aby zachować normalny układ */
+    top: 50%;
+    transform: translateY(-30%);
+    font-size: 2rem;
+    color: #ff6600;
+    text-align: center;
+    font-weight: 600;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    margin-left: 6rem; /* Przesunięcie, aby dodać przestrzeń obok logo */
+}
+
+/* Styl pola wyszukiwania */
+.searchbar {
+    padding-left: .5rem;
+    padding-right: 1rem; /* Zmniejszenie paddingu po prawej stronie */
+    max-width: 35rem; /* Zwiększenie maksymalnej szerokości pola wyszukiwania */
+    font-size: .8rem; /* Zwiększony rozmiar czcionki */
+    border: 1px solid #BFBFBF;
+    height: 2.25rem;
+    flex-grow: 1; /* Rozciąga się na dostępną przestrzeń */
+    box-sizing: border-box;
+}
+
+/* Styl napisu "Szukaj wielu" */
+.search-label {
+    position: absolute;
+    left: 23rem;
+    font-size: .8rem;
+    color: #4A8673;
+    white-space: nowrap; /* Zapobiega łamaniu tekstu */
+}
+
+.category {
+    font-size: .8rem;
+    color: #000000;
+    line-height: 2rem; /* Wyrównanie tekstu w pionie */
+    height:2.25rem;
+    border-bottom: 1px solid #BFBFBF; /* Obramowanie na dole */
+    border-top: 1px solid #BFBFBF; /* Obramowanie na górze */
+    text-align: center;
+    padding: 0 1rem; /* Padding, aby lepiej wyglądało */
+    white-space: nowrap; /* Zapobiega łamaniu tekstu */
+    opacity:0.8;
+}
+
+
+/* Styl przycisku wyszukiwania */
+.search-button {
+    padding: 0.5rem 1rem;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    height: 2.25rem;
+    width: 5rem;
+    cursor: pointer;
+    border-radius:2px;
+    font-size:.9rem;
+    transition: 0.3s;
+}
+
+.search-button:hover {
+    background-color: #ff8533;
+}
+
+.arrow-icon{
+height: .8rem;
+width: .9rem;
+transform: rotate(90deg);
+margin: 0 0 0 .4rem;
+}
+
+.icons {
+    display: flex;
+    gap: 1.25rem; /* Odstęp między ikonami */
+    margin-left:3rem;
+    color: #666;
+    opacity:.6;
+  }
+  
+  .icon-look {
+    width: 1.75rem; /* Możesz dostosować wielkość ikon */
+    height: 1.75rem; /* Możesz dostosować wielkość ikon */
+  }
+
+  .user{
+
+    display: flex;
+    gap: 1rem; /* Odstęp między ikonami */
+    margin:0 0 0 3rem;
+    color: #000000;
+    font-size:.8rem;
+    opacity:.8;
+
+  }
+
+  .arrow-icon2{
+    height: 1rem;
+    width: 1rem;
+    transform: rotate(90deg);
+    margin:0 0 0 -.5rem;
+    }
+  /* Sekcja Pod headerem*/
+
+
+.underheader{
+        position: absolute;
+        width: 100%;
+        height: 3.625rem;
+        top:58%;
+        background-color: #ffffff;
+        border-bottom: 1px solid #BFBFBF; /* Obramowanie na dole */
+        display: flex;
+        justify-content: center; 
+}
+
+.category-under {
+    font-size: .8rem;
+    color: #000000;
+    line-height: 3rem; /* Wyrównanie tekstu w pionie */
+    height:3rem;
+    border-left: 1px solid #BFBFBF; /* Obramowanie na dole */
+    border-right: 1px solid #BFBFBF; /* Obramowanie na górze */
+    text-align: center;
+    margin:.25rem;
+    padding: 0 1rem; /* Padding, aby lepiej wyglądało */
+    white-space: nowrap; /* Zapobiega łamaniu tekstu */
+    opacity:0.8;
+}
+
+.cateallegro {
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie w poziomie */
+    align-items: center; /* Wyśrodkowanie w pionie */
+    gap: 2rem; /* Odstępy między elementami */
+}
+
+.cateallegro span {
+    display: flex;
+    align-items: center; /* Wyśrodkowanie tekstu z ikoną */
+    gap: 0.1rem; /* Odstęp między ikoną a tekstem */
+    font-size: 0.9rem;
+    color: #000;
+    white-space: nowrap; /* Zapobiega łamaniu tekstu */
+}
+
+.cateallegro img {
+    width: 1rem; /* Dostosuj rozmiar ikony */
+    height: 1rem;
+    opacity: .6;
+}
+
+.wcag {
+    display: flex;
+    align-items: center;  /* Wyśrodkowanie w pionie */
+    justify-content: center; /* Wyśrodkowanie w poziomie */
+    background-color: #ff6600;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    height: 100%;
+    margin-left: 10rem;
+    width: 14rem;
+    color: #F5F5F5;
+    text-align: center;
+}
+
+.smart{
+    display: flex;
+    align-items: center;  /* Wyśrodkowanie w pionie */
+    justify-content: center; /* Wyśrodkowanie w poziomie */
+    font-family: "Inter", sans-serif;
+    color: #828482;
+    gap: 0.2em;
+    margin: 0 0 0 2.5rem;
+
+}
+
+
+
