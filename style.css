@@ -22,7 +22,7 @@ body {
     height: 8rem;
     background-color: #fff;
     position: relative;
-    z-index: auto;
+    z-index: 3;
     overflow: visible;
 }
 
@@ -34,7 +34,7 @@ body {
     border-bottom: 1px solid #BFBFBF;
     display: flex;
     justify-content: center;
-    z-index: auto;
+    z-index: 3;
     overflow: visible;
 }
 
@@ -88,6 +88,7 @@ a.logo {
     font-size: .8rem;
     color: #4A8673;
     white-space: nowrap; /* Zapobiega łamaniu tekstu */
+    cursor: pointer;
 }
 
 .category {
@@ -101,6 +102,9 @@ a.logo {
     padding: 0 1rem; /* Padding, aby lepiej wyglądało */
     white-space: nowrap; /* Zapobiega łamaniu tekstu */
     opacity:0.8;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
 }
 
 
@@ -127,6 +131,7 @@ height: .8rem;
 width: .9rem;
 transform: rotate(90deg);
 margin: 0 0 0 .4rem;
+transition: transform 0.3s ease;
 }
 
 .icons {
@@ -145,7 +150,7 @@ margin: 0 0 0 .4rem;
   .user{
 
     display: flex;
-    gap: 1rem; /* Odstęp między ikonami */
+    gap: 1rem; 
     margin:0 0 0 3rem;
     color: #000000;
     font-size:.8rem;
@@ -168,7 +173,7 @@ margin: 0 0 0 .4rem;
     .arrow-icon2.rotated {
         transform: rotate(180deg);
     }
-
+/*popup nr.1*/
     .dropdown-menu {
         display: none;
         position: absolute;
@@ -202,7 +207,7 @@ margin: 0 0 0 .4rem;
         margin-left: 5px;
     }
     hr {
-        border: 1px solid #333;
+        border: 1px solid #000;
         margin: 5px 0;
     }
     .dropdown-menu.active {
@@ -210,9 +215,127 @@ margin: 0 0 0 .4rem;
         opacity: 1;
         transform: translateY(0);
     }
+    /*popup nr.1 koniec*/
+
+    /*popup nr.2*/
+#overlay{
+    background-color: rgba(34, 34, 34, 0.95);
+}
+#popup {
+    background-color: rgba(34, 34, 34, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    width: 600px;
+    text-align: center;
+    font-family: "Open Sans", Arial, sans-serif;
+    position: relative;
+    max-width: 90%; 
+    max-height: 80vh;
+    overflow-y: auto; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#popup h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+#popup p {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+#popup input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 2px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+#popup #addProduct {
+    background-color: transparent;
+    border: none;
+    color: #ff6600;
+    cursor: pointer;
+    margin-bottom: 2px;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+#popup .Search-button {
+    background-color: #ff6600;
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#popup .Search-button:hover {
+    background-color: #ff8533;
+}
+    /*popup nr.2 koniec*/
+
+/*popup nr.3*/
+.arrow-icon.rotated {
+    transform: rotate(180deg);
+}
+
+/* Styl dla menu rozwijanego */
+.dropdown-menu-category {
+    display: none; /* Domyślnie ukryte */
+    position: absolute; /* Ważne, aby element był pozycjonowany */
+    top: 100%;
+    left: 0;
+    background-color: rgba(34, 34, 34, 0.95);
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Wysoki z-index, aby być nad innymi elementami */
+    padding: 5px 0; /* Zmniejszenie paddingu wewnątrz menu */
+    min-width: 200px; /* Minimalna szerokość menu */
+    border-radius: 5px;
+}
+
+/* Wyświetlanie menu po dodaniu klasy active */
+.dropdown-menu-category.active {
+    display: block;
+}
+
+/* Styl dla linków w menu */
+.dropdown-menu-category a {
+    display: block;
+    padding: 4px 12px; /* Zmniejszenie odstępów wokół linków */
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.2; /* Mniejsza wysokość linii */
+    transition: background-color 0.2s ease;
+}
+
+/* Efekt hover dla linków */
+.dropdown-menu-category a:hover {
+    background-color: #ff8533;
+    color: #000;
+}
+
+/* Styl dla aktywnego elementu w menu */
+.dropdown-menu-category a:active {
+    background-color: #ddd;
+}
+/*popup nr.3 koniec*/
+
   /* Sekcja Pod headerem*/
-
-
 .underheader{
         position:absolute;
         z-index: 1;
@@ -239,6 +362,8 @@ margin: 0 0 0 .4rem;
     padding: 0 1rem; /* Padding, aby lepiej wyglądało */
     white-space: nowrap; /* Zapobiega łamaniu tekstu */
     opacity:0.8;
+    position: relative;
+    z-index: 1;
 }
 
 .cateallegro {
@@ -246,6 +371,8 @@ margin: 0 0 0 .4rem;
     justify-content: center; /* Wyśrodkowanie w poziomie */
     align-items: center; /* Wyśrodkowanie w pionie */
     gap: 2rem; /* Odstępy między elementami */
+    position: relative;
+    z-index: 1;
 }
 
 .cateallegro span {
@@ -255,12 +382,16 @@ margin: 0 0 0 .4rem;
     font-size: 0.9rem;
     color: #000;
     white-space: nowrap; /* Zapobiega łamaniu tekstu */
+    position: relative;
+    z-index: 1;
 }
 
 .cateallegro img {
     width: 1rem; /* Dostosuj rozmiar ikony */
     height: 1rem;
     opacity: .6;
+    position: relative;
+    z-index: 1;
 }
 
 .wcag {
