@@ -23,6 +23,37 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropdownMenuSearchLabelCategory = document.getElementById("dropdownMenuSearchLabelCategory");
     const arrowIcon = document.querySelector(".arrow-icon");
 
+    const images = ["./png/bannerphoto.png", "./png/bannerphoto2.png", "./png/bannerphoto3.png"];
+    let currentIndex = 0;
+    const dots = document.querySelectorAll('.dot');
+
+    const imageElement = document.getElementById("imagebanner");
+    const changeButton = document.getElementById("arrow-banner");
+
+
+function changeImage() {
+    currentIndex = (currentIndex + 1) % images.length; 
+    updateDots();
+    imageElement.src = images[currentIndex]; 
+}
+
+function updateDots() {
+    dots.forEach((dot, index) => {
+
+        if (index === currentIndex) {
+            dot.classList.add("active");
+        } else {
+            dot.classList.remove("active");
+        }
+    });
+}
+
+
+changeButton.addEventListener("click", changeImage);
+
+
+setInterval(changeImage, 3000);
+
 searchLabelCategory.addEventListener("click", function (event) {
     dropdownMenuSearchLabelCategory.classList.toggle("active");
     console.log("Dropdown menu aktywne:", dropdownMenuSearchLabelCategory.classList.contains("active"));
@@ -130,4 +161,5 @@ document.addEventListener("click", function (event) {
     }
 
     document.getElementById('searchLabel').addEventListener('click', openSearchPopup);
+
 });
