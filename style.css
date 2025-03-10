@@ -486,6 +486,7 @@ display: flex;
 justify-content: center; 
 align-items: center;
 cursor: pointer; 
+z-index: auto;
 }
 
 .arrow-banner:hover{
@@ -497,6 +498,8 @@ border: 2px solid #1a1a1a;
     height: 1.5rem;
     width: 1.5rem;
     opacity:.5;
+    position: relative;
+    z-index: 1;
 }
 
 
