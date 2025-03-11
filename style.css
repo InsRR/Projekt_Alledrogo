@@ -338,6 +338,89 @@ transition: transform 0.3s ease;
 /*popup nr.3 koniec*/
 
   /* Sekcja Pod headerem*/
+
+  /*popup nr.1 pod headerem*/
+/* Domyślnie ukryte menu kategorii */
+#dropdownMenuCategory {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(34, 34, 34, 1);
+    border-radius: 8px;
+    z-index: 10;
+    min-width: 400px;
+    overflow: hidden;
+    flex-direction: row;
+    padding-top: 1px; /* Jeszcze mniejszy odstęp góra */
+    padding-bottom: 1px; /* Jeszcze mniejszy odstęp dół */
+}
+
+/* Widoczne menu po dodaniu klasy active */
+#dropdownMenuCategory.active {
+    display: flex;
+}
+
+/* Style dla głównych kategorii */
+.categories {
+    width: 40%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 1);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.categories li {
+    padding: 1px 8px; /* Zmniejszenie odstępów góra-dół */
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.categories li:hover {
+    background-color: #ff8533;
+    color: #000;
+}
+
+/* Subkategorie */
+.subcategories {
+    width: 60%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(34, 34, 34, 1);
+}
+
+.subcategories li {
+    padding: 1px 8px; /* Zmniejszenie odstępów góra-dół */
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.2s;
+}
+
+.subcategories li:hover {
+    background-color: #ff8533;
+    color: #000;
+}
+
+.arrow-icon3.rotated {
+    transform: rotate(180deg);
+}
+
+.arrow-icon3 {
+    height: .8rem;
+    width: .9rem;
+    transform: rotate(90deg);
+    margin: 0 0 0 .4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+  /*popup nr.1 pod headerem koniec*/
 .underheader{
         position:absolute;
         z-index: 1;
@@ -366,6 +449,7 @@ transition: transform 0.3s ease;
     opacity:0.8;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 }
 
 .cateallegro {
