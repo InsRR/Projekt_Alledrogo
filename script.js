@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropdownMenuSearchLabelCategory = document.getElementById("dropdownMenuSearchLabelCategory");
     const arrowIcon = document.querySelector(".arrow-icon");
 
-    const images = ["./png/bannerphoto.png", "./png/bannerphoto2.png", "./png/bannerphoto3.png"];
+    const images = ["./img/bannerphoto.png", "./img/bannerphoto2.png", "./img/bannerphoto3.png"];
     let currentIndex = 0;
     const dots = document.querySelectorAll('.dot');
 
