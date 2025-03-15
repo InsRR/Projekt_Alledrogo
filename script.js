@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
         event.stopPropagation(); 
     });
 
+    userMenu.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            dropdownMenu.classList.toggle("active");
+            console.log("Dropdown menu aktywne:", dropdownMenu.classList.contains("active"));
+            arrowIcon2.classList.toggle("rotated");
+            event.stopPropagation();
+        }
+    });
+
     document.addEventListener("click", function (event) {
         if (!userMenu.contains(event.target) && !dropdownMenu.contains(event.target)) {
             dropdownMenu.classList.remove("active");
@@ -48,9 +57,7 @@ function updateDots() {
     });
 }
 
-
 changeButton.addEventListener("click", changeImage);
-
 
 setInterval(changeImage, 3000);
 
@@ -59,6 +66,15 @@ searchLabelCategory.addEventListener("click", function (event) {
     console.log("Dropdown menu aktywne:", dropdownMenuSearchLabelCategory.classList.contains("active"));
     arrowIcon.classList.toggle("rotated");
     event.stopPropagation();
+});
+
+searchLabelCategory.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        dropdownMenuSearchLabelCategory.classList.toggle("active");
+        console.log("Dropdown menu aktywne:", dropdownMenuSearchLabelCategory.classList.contains("active"));
+        arrowIcon.classList.toggle("rotated");
+        event.stopPropagation();
+    }
 });
 
 document.addEventListener("click", function (event) {
@@ -98,16 +114,16 @@ document.addEventListener("click", function (event) {
         <p>Znajdziemy sprzedawców, którzy mają wszystko czego szukasz</p>
         <div id="inputsContainer">
             <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                <input type="text" placeholder="1. produkt" style="flex-grow: 1; margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 2px;">
+                <input type="text" tabindex="0" placeholder="1. produkt" style="flex-grow: 1; margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 2px;">
                 <button style="padding: 6px 6px; background-color: #ff6600; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Remove</button>
             </div>
             <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                <input type="text" placeholder="2. produkt" style="flex-grow: 1; margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 2px;">
+                <input type="text" tabindex="0" placeholder="2. produkt" style="flex-grow: 1; margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 2px;">
                 <button style="padding: 6px 6px; background-color: #ff6600; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Remove</button>
             </div>
         </div>
-        <button id="addProduct">+ DODAJ KOLEJNY PRODUKT</button>
-        <button class="Search-button">SZUKAJ</button>
+        <button id="addProduct" tabindex="0">+ DODAJ KOLEJNY PRODUKT</button>
+        <button class="Search-button" tabindex="0">SZUKAJ</button>
     </div>
 `;
 
@@ -161,72 +177,132 @@ document.addEventListener("click", function (event) {
     }
 
     document.getElementById('searchLabel').addEventListener('click', openSearchPopup);
+    document.getElementById('searchLabel').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            openSearchPopup();
+        }
+    });
+
+const arrowIcon3 = document.querySelector(".arrow-icon3");
+const categoryTrigger = document.getElementById("categoryTrigger");
+const dropdownMenuCategory = document.getElementById("dropdownMenuCategory");
+const categoriesList = document.querySelector(".categories");
+const subCategoriesList = document.getElementById("subCategoriesList");
+
+const categories = {
+    Elektronika: ["Telefony", "Komputery", "Telewizory", "Laptopy"],
+    Moda: ["Ubrania", "Obuwie", "Akcesoria", "Odzież damska", "Odzież męska"],
+    "Dom i Ogród": ["Meble", "Ozdoby świateczne u okolicznościowe", "Dekoracje i dywaniki"],
+    Supermarket: ["Kawy", "Herbaty", "Yerba mate", "Zdrowa żywność", "Produkty sypkie"],
+    Dziecko: ["Klocki LEGO", "Lalki i akcesoria", "Zabawki dla niemowląt"],
+    Uroda: ["Kremy do twarzy", "Szampony", "Maseczki do twarzy", "Koloryzacja"],
+    Zdrowie: ["Suplementy diety", "Leki bez recepty", "Materiały opatrunkowe"],
+    "Kultura i rozrywka": ["Biografie", "Fantasy, science fiction, horror", "Komiksy"],
+    "Sport i turystyka": ["Rowery", "Kaski", "Siłownia", "ASG"],
+    Motoryzacja: ["Części karoserii", "Oświetlenie", "Układ hamulcowy"],
+    Nieruchomości: ["Mieszkania na sprzedaż", "Domy na sprzedaż"],
+    "Kolekcje i sztuka": ["Porcelana", "Ceramika", "Szkło"],
+    "Firma i usługi": ["Meble biurowe", "Nieszczarki", "Papier biurowy"],
+    "eBilet.pl": ["Sporty walki", "Komedia", "Stand-up"],
+    "Allegro Lokalnie": ["Laptopy", "Obuwie", "Narzędzia"]
+};
+
+for (const category in categories) {
+    const categoryItem = document.createElement("li");
+    categoryItem.textContent = category;
+    categoryItem.classList.add("category-item", "speak");
+    categoryItem.setAttribute("tabindex", "0");
+
+    function activateCategory(category, categoryItem) {
+        if (categoryItem.classList.contains("active")) return;
     
-    const arrowIcon3 = document.querySelector(".arrow-icon3");
-    const categoryTrigger = document.getElementById("categoryTrigger");
-    const dropdownMenuCategory = document.getElementById("dropdownMenuCategory");
-    const categoriesList = document.querySelector(".categories");
-    const subCategoriesList = document.getElementById("subCategoriesList");
+        document.querySelectorAll(".category-item").forEach(item => item.classList.remove("active"));
+        subCategoriesList.innerHTML = "";
     
-    const categories = {
-        Elektronika: ["Telefony", "Komputery", "Telewizory", "Laptopy"],
-        Moda: ["Ubrania", "Obuwie", "Akcesoria", "Odzież damska", "Odzież męska"],
-        "Dom i Ogród": ["Meble", "Ozdoby świateczne u okolicznościowe", "Dekoracje i dywaniki"],
-        Supermarket: ["Kawy", "Herbaty", "Yerba mate", "Zdrowa żywność", "Produkty sypkie"],
-        Dziecko: ["Klocki LEGO", "Lalki i akcesoria", "Zabawki dla niemowląt"],
-        Uroda: ["Kremy do twarzy", "Szampony", "Maseczki do twarzy", "Koloryzacja"],
-        Zdrowie: ["Suplementy diety", "Leki bez recepty", "Materiały opatrunkowe"],
-        "Kultura i rozrywka": ["Biografie", "Fantasy, science fiction, horror", "Komiksy"],
-        "Sport i turystyka": ["Rowery", "Kaski", "Siłownia", "ASG"],
-        Motoryzacja: ["Części karoserii", "Oświetlenie", "Układ hamulcowy"],
-        Nieruchomości: ["Mieszkania na sprzedaż", "Domy na sprzedaż"],
-        "Kolekcje i sztuka": ["Porcelana", "Ceramika", "Szkło"],
-        "Firma i usługi": ["Meble biurowe", "Nieszczarki", "Papier biurowy"],
-        "eBilet.pl": ["Sporty walki", "Komedia", "Stand-up"],
-        "Allegro Lokalnie": ["Laptopy", "Obuwie", "Narzędzia"]
-    };
+        categoryItem.classList.add("active");
     
-    for (const category in categories) {
-        const categoryItem = document.createElement("li");
-        categoryItem.textContent = category;
-        categoryItem.classList.add("category-item");
+        categories[category].forEach(subcategory => {
+            const subCategoryItem = document.createElement("li");
+            subCategoryItem.textContent = subcategory;
+            subCategoryItem.classList.add("subcategory-item", "speak");
+            subCategoryItem.setAttribute("tabindex", "0");
+            subCategoriesList.appendChild(subCategoryItem);// Jedynie tutaj nie działa funkcja speak nie wiem jeszcze dlaczego
     
-        categoryItem.addEventListener("click", function (event) {
-            event.stopPropagation();
-    
-            if (categoryItem.classList.contains("active")) {
-                return;
-            }
-    
-            document.querySelectorAll(".category-item").forEach(item => item.classList.remove("active"));
-            subCategoriesList.innerHTML = "";
-    
-            categoryItem.classList.add("active");
-    
-            categories[category].forEach(subcategory => {
-                const subCategoryItem = document.createElement("li");
-                subCategoryItem.textContent = subcategory;
-                subCategoryItem.classList.add("subcategory-item");
-                subCategoriesList.appendChild(subCategoryItem);
+            subCategoryItem.addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    console.log(`Wybrano podkategorię: ${subcategory}`);
+                }
             });
         });
-    
-        categoriesList.appendChild(categoryItem);
     }
     
-    categoryTrigger.addEventListener("click", function (event) {
+    categoryItem.addEventListener("click", function (event) {
+        event.stopPropagation();
+        activateCategory(category, categoryItem);
+    });
+    
+    categoryItem.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.stopPropagation();
+            activateCategory(category, categoryItem);
+        }
+    });
+    
+    categoriesList.appendChild(categoryItem);
+}
+
+categoryTrigger.addEventListener("click", function (event) {
+    dropdownMenuCategory.classList.toggle("active");
+    arrowIcon3.classList.toggle("rotated");
+    event.stopPropagation();
+});
+
+categoryTrigger.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
         dropdownMenuCategory.classList.toggle("active");
         arrowIcon3.classList.toggle("rotated");
         event.stopPropagation();
+    }
+});
+
+document.addEventListener("click", function (event) {
+    if (!dropdownMenuCategory.contains(event.target) && !categoryTrigger.contains(event.target)) {
+        dropdownMenuCategory.classList.remove("active");
+        arrowIcon3.classList.remove("rotated");
+        document.querySelectorAll(".category-item").forEach(item => item.classList.remove("active"));
+        subCategoriesList.innerHTML = "";
+    }
+});
+
+    
+    document.querySelectorAll("a","input").forEach(div => div.setAttribute("tabindex", "0"));
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Tab") {
+            event.preventDefault(); // Blokuje domyślne działanie klawisza Tab
+            moveFocus(event.shiftKey ? -1 : 1); // Sprawdza, czy Shift jest wciśnięty
+        }
     });
     
-    document.addEventListener("click", function (event) {
-        if (!dropdownMenuCategory.contains(event.target) && !categoryTrigger.contains(event.target)) {
-            dropdownMenuCategory.classList.remove("active");
-            arrowIcon3.classList.remove("rotated");
-            document.querySelectorAll(".category-item").forEach(item => item.classList.remove("active"));
-            subCategoriesList.innerHTML = "";
-        }
+    function moveFocus(direction) {
+        const focusableElements = document.querySelectorAll("[tabindex='0'], input, button, a, textarea, select");
+        const elementsArray = Array.from(focusableElements);
+        const currentIndex = elementsArray.indexOf(document.activeElement);
+        
+        let nextIndex = (currentIndex + direction + elementsArray.length) % elementsArray.length;
+        elementsArray[nextIndex].focus();
+    }
+
+    function speak(text) {
+        window.speechSynthesis.cancel(); // Przerywa aktualne komunikaty
+        let msg = new SpeechSynthesisUtterance(text);
+        msg.lang = "pl-PL";
+        window.speechSynthesis.speak(msg);
+    }
+    
+    document.querySelectorAll('.speak').forEach(el => {
+        el.addEventListener('focus', () => speak(el.textContent.trim()));
+        el.addEventListener('mouseover', () => speak(el.textContent.trim())); 
+        el.addEventListener('mouseleave', () => window.speechSynthesis.cancel()); 
     });
     
 });
