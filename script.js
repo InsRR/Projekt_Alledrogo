@@ -1,33 +1,129 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const userMenu = document.querySelector(".user"); 
+    const userMenu = document.querySelector(".user");
     const dropdownMenu = document.getElementById("dropdownMenu");
-    const arrowIcon2 = document.querySelector(".arrow-icon2"); 
+    const arrowIcon2 = document.querySelector(".arrow-icon2");
 
+    // Otwieranie/zamykanie dropdownMenu
     userMenu.addEventListener("click", function (event) {
         dropdownMenu.classList.toggle("active");
-        console.log("Dropdown menu aktywne:", dropdownMenu.classList.contains("active"));
         arrowIcon2.classList.toggle("rotated");
-        event.stopPropagation(); 
+        event.stopPropagation();
     });
 
     userMenu.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             dropdownMenu.classList.toggle("active");
-            console.log("Dropdown menu aktywne:", dropdownMenu.classList.contains("active"));
             arrowIcon2.classList.toggle("rotated");
             event.stopPropagation();
         }
     });
 
+    // Zamknięcie dropdownMenu po kliknięciu poza
     document.addEventListener("click", function (event) {
         if (!userMenu.contains(event.target) && !dropdownMenu.contains(event.target)) {
             dropdownMenu.classList.remove("active");
-            console.log("Dropdown menu aktywne:", dropdownMenu.classList.contains("active"));
-            arrowIcon2.classList.remove("rotated"); 
-            event.stopPropagation(); 
+            arrowIcon2.classList.remove("rotated");
         }
     });
- 
+
+    // Delegowanie kliknięcia wewnątrz dropdownMenu
+    dropdownMenu.addEventListener("click", function (event) {
+        if (event.target.id === "openSecondPopupLink") {
+            event.preventDefault(); // Zapobiega przeładowaniu strony
+    
+            let existingPopup = document.getElementById("secondPopup");
+    
+            if (existingPopup) {
+                existingPopup.remove(); // Jeśli popup już istnieje, zamknij go
+            } else {
+                // Dodanie drugiego popupa do dropdownMenu
+                dropdownMenu.innerHTML += `
+                    <div id="secondPopup" class="popup">
+                        <hr>
+                        <div class="toggle-container">
+                            <a href="#" class="speak">Dark/Light</a>
+                            <label class="switch">
+                                <input type="checkbox" id="darkModeToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-container">
+                            <a href="#" class="speak">Czytanie tekstu</a>
+                            <label class="switch">
+                                <input type="checkbox" id="readingModeToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <a href="#" id="closeSecondPopup">Zamknij</a>
+                    </div>
+                `;
+    
+                // Po utworzeniu popupu, przypisz odpowiednie nasłuchiwacze
+                const readingModeToggle = document.getElementById('readingModeToggle');
+                const darkModeToggle = document.getElementById('darkModeToggle'); // Suwak Dark/Light
+                const closeSecondPopup = document.getElementById('closeSecondPopup');
+    
+                // Funkcja, która sprawdza, czy suwak jest włączony przed użyciem speak()
+                function speak(text) {
+                    if (readingModeToggle.checked) {  // Sprawdzanie, czy suwak jest włączony
+                        window.speechSynthesis.cancel(); // Przerywa aktualne komunikaty
+                        let msg = new SpeechSynthesisUtterance(text);
+                        msg.lang = "pl-PL";
+                        window.speechSynthesis.speak(msg);
+                    }
+                }
+    
+                // Obsługa zmiany stanu suwaka czytania
+                readingModeToggle.addEventListener('change', function () {
+                    if (this.checked) {
+                        console.log("Włączono tryb czytania tekstu");
+                        speak("Włączono tryb czytania tekstu"); // Gdy suwak włączony, mówienie zostaje aktywowane
+                    } else {
+                        console.log("Wyłączono tryb czytania tekstu");
+                        window.speechSynthesis.cancel(); // Gdy suwak wyłączony, zatrzymaj mówienie
+                    }
+                });
+                
+                // Obsługa zmiany stanu suwaka Dark/Light
+                darkModeToggle.addEventListener('change', function () {
+                    if (this.checked) {
+                        setTheme('dark');
+                    } else {
+                        setTheme('light');
+                    }
+                });
+    
+                // Funkcja do ustawienia motywu
+                function setTheme(theme) {
+                    document.body.className = theme;
+                    localStorage.setItem('theme', theme);
+                }
+    
+                // Ustawienie motywu z lokalnej pamięci przy załadowaniu strony
+                const savedTheme = localStorage.getItem('theme') || 'light';
+                setTheme(savedTheme);
+                darkModeToggle.checked = (savedTheme === 'dark');  // Ustawienie stanu suwaka
+    
+                // Przypisz nasłuchiwacze do elementów w popupie, które mają być odczytywane
+                document.querySelectorAll('.speak').forEach(el => {
+                    el.addEventListener('focus', () => speak(el.textContent.trim()));  // Odczyt tekstu po fokusu
+                    el.addEventListener('mouseover', () => speak(el.textContent.trim())); // Odczyt tekstu po najechaniu myszką
+                    el.addEventListener('mouseleave', () => window.speechSynthesis.cancel()); // Przerwanie odczytu przy opuszczeniu
+                });
+    
+                // Obsługa zamknięcia popupu
+                closeSecondPopup.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    document.getElementById("secondPopup").remove();
+                });
+            }
+    
+            event.stopPropagation();
+        }
+    });
+    
+    
+
     const searchLabelCategory = document.getElementById("searchLabelCategory");
     const dropdownMenuSearchLabelCategory = document.getElementById("dropdownMenuSearchLabelCategory");
     const arrowIcon = document.querySelector(".arrow-icon");
@@ -292,17 +388,4 @@ document.addEventListener("click", function (event) {
         elementsArray[nextIndex].focus();
     }
 
-    function speak(text) {
-        window.speechSynthesis.cancel(); // Przerywa aktualne komunikaty
-        let msg = new SpeechSynthesisUtterance(text);
-        msg.lang = "pl-PL";
-        window.speechSynthesis.speak(msg);
-    }
-    
-    document.querySelectorAll('.speak').forEach(el => {
-        el.addEventListener('focus', () => speak(el.textContent.trim()));
-        el.addEventListener('mouseover', () => speak(el.textContent.trim())); 
-        el.addEventListener('mouseleave', () => window.speechSynthesis.cancel()); 
-    });
-    
 });
