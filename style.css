@@ -3,16 +3,115 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
-    
 }
 
+/* Definicje kolorów dla jasnego i ciemnego trybu */
+:root {
+    --background-light: #F5F5F5;
+    --text-light: #000000;
+    --background-dark: #121212;
+    --text-dark: #ffffff;
+    --header-light: #ffffff;
+    --header-dark: #1E1E1E;
+    --border-light: #BFBFBF;
+    --border-dark: #444444;
+}
+
+/* Tryb jasny */
+body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    font-family: "Open Sans", Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Tryb ciemny */
+body.dark {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+body.dark div {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+body.dark span {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+/* Nagłówek i menu */
+.header, .up-section, .underheader {
+    background-color: var(--header-light);
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color 0.3s, border-bottom 0.3s;
+}
+body.dark .header, 
+body.dark .up-section, 
+body.dark .underheader {
+    background-color: var(--header-dark);
+    border-bottom: 1px solid var(--border-dark);
+}
+
+/* Tylko menu zmienia kolor */
+.dropdown-menu, 
+.dropdown-menu-category {
+    background-color: var(--header-light);
+    transition: background-color 0.3s;
+}
+body.dark .dropdown-menu, 
+body.dark .dropdown-menu-category {
+    background-color: var(--header-dark);
+}
+
+/* Stopka */
+.footer, .footer-section {
+    background-color: var(--header-light);
+    transition: background-color 0.3s;
+}
+body.dark .footer, 
+body.dark .footer-section {
+    background-color: var(--header-dark);
+}
+
+/* Przyciski pomarańczowe - nie zmieniamy kolorów */
+.search-button,
+.wcag,
+.footer-banner {
+    background-color: #ff6600 !important; /* Pomarańczowy */
+    color: white;
+    transition: background-color 0.3s;
+}
+.search-button:hover {
+    background-color: #ff8533 !important;
+}
+
+/* Popupy - pozostają bez zmian */
+#overlay, #popup {
+    background-color: rgba(34, 34, 34, 0.95);
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+select {
+    padding: 5px;
+    font-size: 1rem;
+}
+/*jasny ciemny koniec*/
 /* Styl dla całej strony */
 body {
     background-color: #F5F5F5;
     font-family: "Open Sans", Arial, sans-serif;
     position:relative;
     z-index: auto;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /*Sekcja górna strony*/
@@ -215,6 +314,58 @@ transition: transform 0.3s ease;
         opacity: 1;
         transform: translateY(0);
     }
+    .toggle-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+    }
+    
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+    }
+    
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 20px;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 14px;
+        width: 14px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
+    
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+    
+    input:checked + .slider:before {
+        transform: translateX(20px);
+    }
+    
     /*popup nr.1 koniec*/
 
     /*popup nr.2*/
@@ -338,7 +489,6 @@ transition: transform 0.3s ease;
   /* Sekcja Pod headerem*/
 
   /*popup nr.1 pod headerem*/
-/* Domyślnie ukryte menu kategorii */
 #dropdownMenuCategory {
     display: none;
     position: absolute;
