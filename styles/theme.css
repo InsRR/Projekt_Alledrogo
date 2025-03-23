@@ -1,0 +1,110 @@
+/* Styl dla całej strony */
+body {
+    background-color: #F5F5F5;
+    font-family: "Open Sans", Arial, sans-serif;
+    position: relative;
+    z-index: auto;
+}
+
+h2 {
+    color: #000;
+    text-align: left;
+    font-family: "Inter";
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 500;
+    margin-left: 1.5625rem;
+}
+
+.Title-offers {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 1.75rem;
+    margin: 1.5rem 0 0 2rem;
+}
+
+.Title-inspiration {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 1.75rem;
+    margin: 1.5rem 0 0 2rem;
+}
+
+.second-inspiration {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0.5rem 0 0 2.75rem;
+}
+
+.title-question {
+    font-size: 25px;
+    margin: 3rem 0 4rem 0;
+    font-weight: 600;
+}
+
+.footer-title {
+    font-size: 25px;
+    margin: 3rem 0 4rem 0;
+    font-weight: 600;
+}
+
+.price {
+    color: green;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.occassion {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 500;
+    background: #412678;
+    width: 4.3125rem;
+    height: 0.875rem;
+}
+
+.old-price {
+    color: gray;
+    font-size: 0.5625rem;
+    text-decoration: line-through;
+}
+
+.info {
+    color: gray;
+    font-size: 0.625rem;
+    display: flex;
+    align-items: center;
+}
+
+.warranty {
+    color: #4A8673;
+    font-family: Inter;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 500;
+    text-align: left;
+}
+
+.paylater {
+    color: #000;
+    font-family: Inter;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+.delivery {
+    color: #1BB826;
+    font-family: Inter;
+    font-size: 0.5625rem;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 0.625rem;
+}
