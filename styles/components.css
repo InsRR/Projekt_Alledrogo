@@ -152,7 +152,8 @@ a.logo {
 .arrow-icon2.rotated {
     transform: rotate(180deg);
 }
-
+/* Sekcja górna strony Koniec */
+/*---------------------------------------------------------------------------------------------------*/
 /* Popup nr.1 */
 .dropdown-menu {
     display: none;
@@ -168,7 +169,6 @@ a.logo {
     transform: translateY(-10px);
     transition: opacity 0.3s, transform 0.3s;
 }
-
 .dropdown-menu a {
     display: block;
     padding: 10px 15px;
@@ -176,11 +176,9 @@ a.logo {
     text-decoration: none;
     transition: background 0.3s;
 }
-
 .dropdown-menu a:hover {
-    background: var(--primary-color);
+    background: #ff6600;
 }
-
 .new {
     background: green;
     color: white;
@@ -189,18 +187,68 @@ a.logo {
     font-size: 12px;
     margin-left: 5px;
 }
-
 hr {
     border: 1px solid #000;
     margin: 5px 0;
 }
-
 .dropdown-menu.active {
     display: block;
     opacity: 1;
     transform: translateY(0);
 }
+.toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
 
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+/* Popup nr.1 Koniec */
+/*---------------------------------------------------------------------------------------------------------*/
 /* Popup nr.2 */
 #overlay {
     background-color: rgba(34, 34, 34, 0.95);
@@ -269,13 +317,13 @@ hr {
 #popup .Search-button:hover {
     background-color: var(--secondary-color);
 }
-
+/* Popup nr.2 Koniec*/
+/*-----------------------------------------------------------------------------------------------*/
 /* Popup nr.3 */
 .arrow-icon.rotated {
     transform: rotate(180deg);
 }
 
-/* Styl dla menu rozwijanego */
 .dropdown-menu-category {
     display: none;
     position: absolute;
@@ -290,12 +338,10 @@ hr {
     border-radius: 5px;
 }
 
-/* Wyświetlanie menu po dodaniu klasy active */
 .dropdown-menu-category.active {
     display: block;
 }
 
-/* Styl dla linków w menu */
 .dropdown-menu-category a {
     display: block;
     padding: 4px 12px;
@@ -306,21 +352,19 @@ hr {
     transition: background-color 0.2s ease;
 }
 
-/* Efekt hover dla linków */
 .dropdown-menu-category a:hover {
     background-color: var(--secondary-color);
     color: var(--text-color);
 }
 
-/* Styl dla aktywnego elementu w menu */
 .dropdown-menu-category a:active {
     background-color: #ddd;
 }
-
+/* Popup nr.3 Koniec*/
+/*------------------------------------------------------------------------------------------------------*/
 /* Sekcja Pod headerem */
 
 /* Popup nr.1 pod headerem */
-/* Domyślnie ukryte menu kategorii */
 #dropdownMenuCategory {
     display: none;
     position: absolute;
@@ -336,12 +380,10 @@ hr {
     padding-bottom: 1px;
 }
 
-/* Widoczne menu po dodaniu klasy active */
 #dropdownMenuCategory.active {
     display: flex;
 }
 
-/* Style dla głównych kategorii */
 .categories {
     width: 40%;
     list-style: none;
@@ -365,7 +407,6 @@ hr {
     color: var(--text-color);
 }
 
-/* Subkategorie */
 .subcategories {
     width: 60%;
     list-style: none;
@@ -399,8 +440,9 @@ hr {
     margin: 0 0 0 .4rem;
     transition: transform 0.3s ease-in-out;
 }
-
 /* Popup nr.1 pod headerem koniec */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
 .underheader {
     position: absolute;
     z-index: 1;
@@ -487,7 +529,7 @@ hr {
     z-index: 1;
     position: relative;
 }
-
+/*-------------------------------------------------------------------------------------------------------------------------*/
 /* Produkt */
 .product {
     position: relative;
@@ -496,7 +538,6 @@ hr {
     padding: 0.625rem;
     text-align: center;
     border-radius: 0.3125rem;
-    background-color: #fff;
 }
 
 .product img {
