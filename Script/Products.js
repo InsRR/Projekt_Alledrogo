@@ -41,7 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         <p class="occassion">Smart! okazja</p>
                         <p class="old-price">${product.oldPrice}</p>
                     </div>
-                    <p class="info">cena z 30 dni <span class="info-icon">ⓘ</span></p>
+                    <p class="info">
+                        cena z 30 dni <span class="info-icon">ⓘ</span>
+                    </p>
                 </div>
                 <p class="price">${product.newPrice}</p>
                 <div class="top">
