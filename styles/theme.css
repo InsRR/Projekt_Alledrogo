@@ -281,7 +281,7 @@ body.dark .smart img {
     filter: brightness(0.8);
 }
 
-body.dark .offers, body.dark .section-second-offers, body.dark .under-center-section, body.dark .banner, body.dark .second-inspiration, body.dark .inspiration span, body.dark .questions-section, body.dark .footer, body.dark .end-section {
+body.dark .offers, body.dark .section-second-offers, body.dark .under-center-section, body.dark .banner, body.dark .second-inspiration, body.dark .section-inpsiration, body.dark .inspiration span, body.dark .questions-section, body.dark .footer, body.dark .end-section {
     background-color: var(--background-dark);
 }
 
