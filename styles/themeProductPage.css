@@ -1,0 +1,85 @@
+/*Theme Dark for Product_page*/
+body.dark {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+    font-family: var(--font-family);
+}
+
+body.dark .container, 
+body.dark .product-card, 
+body.dark .sidebar, 
+body.dark .footer, 
+body.dark .search-container, 
+body.dark .up-section, 
+body.dark .in-section, 
+body.dark .category, 
+body.dark .left-box, 
+body.dark .right-box, 
+body.dark .main-content, 
+body.dark .details-box, 
+body.dark .product-info {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+    border: 1px solid var(--border-dark);
+}
+
+body.dark .product-title, 
+body.dark .product-description, 
+body.dark .search-label, 
+body.dark .category, 
+body.dark .search-button, 
+body.dark .user, 
+body.dark .wcag, 
+body.dark .cateallegro span, 
+body.dark .smart, 
+body.dark .left-box-title, 
+body.dark .right-box-title, 
+body.dark .main-content-title, 
+body.dark .details-box-title, 
+body.dark .product-info-title {
+    color: var(--text-dark);
+}
+
+body.dark .searchbar {
+    background-color: var(--header-dark);
+    color: var(--text-dark);
+    border: 1px solid var(--border-dark);
+}
+
+body.dark .searchbar::placeholder {
+    color: var(--border-dark);
+}
+
+body.dark button {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    border: 1px solid var(--border-dark);
+}
+
+body.dark button:hover {
+    background-color: var(--secondary-color);
+}
+
+body.dark .icons img, 
+body.dark .cateallegro img, 
+body.dark .smart img, 
+body.dark .arrow-icon, 
+body.dark .arrow-icon2 {
+    filter: brightness(0.8);
+}
+
+body.dark .category.dark {
+    border-bottom: 1px solid var(--border-dark);
+    border-top: 1px solid var(--border-dark);
+}
+
+body.dark .input-field {
+    background-color: var(--body-dark);
+    color: var(--text-dark);
+    border: 1px solid var(--border-dark);
+}
+
+body.dark .input-field:focus {
+    border-color: var(--primary-color);
+}
+
