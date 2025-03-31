@@ -249,7 +249,7 @@ box-sizing: border-box;
     justify-content: flex-start;
     align-items: flex-start;
     margin: 0 auto;
-    margin-top: 64rem;
+    margin-top: 2rem;
     position: relative;
 }
 
@@ -345,6 +345,10 @@ box-sizing: border-box;
     width: 18rem;
 }
 
+.phone-footer {
+    display: none;
+}
+
 
 /* ----------- iPad Pro ----------- */
 /* Portrait and Landscape */
@@ -376,7 +380,7 @@ box-sizing: border-box;
     }
 /*center*/
 .center-section {
-    width: 63rem;
+    width:100%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -389,6 +393,9 @@ box-sizing: border-box;
     height: 25rem;
 }
 
+.banner-img {
+    height: 20rem;
+}
 .under-center-section {
     overflow-x: hidden; /* Zapobiega poziomemu przewijaniu */
 }
@@ -398,9 +405,8 @@ box-sizing: border-box;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 30.9375rem;
+    height: auto;
     width: 100%;
-    background-color: #FE6201;
     padding: 1rem 0;
     margin-top: 3rem;
     position: relative;
@@ -414,7 +420,16 @@ box-sizing: border-box;
 }
 
 .section-second-offers {
-    overflow: hidden; /* Dodane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 27.9375rem;
+    width: 100%;
+    background-color: #FFF;
+    padding: 1rem 0;
+    margin-top: 4rem;
+    position: relative;
 }
 
 .second-offers {
@@ -449,3 +464,107 @@ box-sizing: border-box;
 }
 
 }
+
+@media screen and (max-width: 450px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .center-section {
+        align-items: flex-start;
+        width:100%;
+    }
+    .banner-img {
+        width: 100%;
+        max-width: 90rem;
+        height: 20rem;
+        position: absolute;
+        box-sizing: border-box;
+    }
+
+        .offers {
+        height: 22.9375rem;
+        width: 26rem;
+    }
+
+    .questions-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: auto;
+        width: 100%;
+        background-color: #D9D9D9;
+        padding: 1rem 0;
+        margin-top: 4rem;
+        position: relative;
+        flex-wrap: nowrap;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1rem;
+        height: auto;
+        width: 100%;
+        background-color: #FFFFFF;
+        padding: 1rem 2rem;
+        margin-top: 4rem;
+        position: relative;
+    }
+
+    .footer-view {
+        padding:0;
+    }
+    .footer-icons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-icons img:nth-child(n+3) {
+        grid-column: span 3;
+        justify-self: center;
+    }
+
+    .phone-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #FFFFFF;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.5rem 0;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    .phone-footer a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: #828482;
+        text-align: center;
+        text-decoration: none;
+        flex-direction: column-reverse;
+    }
+
+    .phone-footer a:hover {
+        color: #2ab9a3;
+    }
+
+    .phone-footer img {
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .phone-footer a span {
+        display: block; /* Ensures the text is below the icon */
+        font-size: 0.75rem;
+        color: #333;
+        margin-top: 0.25rem; /* Adds spacing between the icon and the text */
+    }
+  }
