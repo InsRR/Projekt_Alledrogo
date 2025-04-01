@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="./styles/Products_page.css" />
 <!--Wystarczy że za tym kometarzem dasz ""--><link rel="stylesheet" href="./styles/components.css">
 <link rel="stylesheet" href="./styles/layout.css"><!--Możesz też sobie zakomentować wszystkie CSS oprócz Products_page jak chcesz zobaczyć jak to wygląda-->
-<link rel="stylesheet" href="./styles/theme.css"><!--Na razie to dodałem components i reszte ale to rozwala troche strone jak chcesz zakomentuj sobie to odwołanie do CSS i zobacz jak wygląda przed i po-->
+<link rel="stylesheet" href="./styles/themeProductPage.css"><!--Na razie to dodałem components i reszte ale to rozwala troche strone jak chcesz zakomentuj sobie to odwołanie do CSS i zobacz jak wygląda przed i po-->
 <link rel="stylesheet" href="./styles/variables.css">
 <link rel="stylesheet" href="./styles/reset.css">
 
@@ -107,10 +107,10 @@
 </section>
 
 <section class="toptop ">
-  <a href="#">Allegro</a> /
-  <a href="#">Elektronika</a> /
-  <a href="#">Komputery</a> /
-  <a href="#">Laptopy</a> /
+  <a href="#">Allegro</a><span class="separator"> / </span>
+  <a href="#">Elektronika</a><span class="separator"> / </span>
+  <a href="#">Komputery</a><span class="separator"> / </span>
+  <a href="#">Laptopy</a><span class="separator"> / </span>
   <a href="#" class="current">Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD...</a>
 </section>
 
@@ -124,8 +124,9 @@
     </section>
     <h1>Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD <br>120Hz Win11 Silver</h1>
     <p class="os">2 osoby kupiły ostatnio</p>
-    <img src="./img_product_page/ADYY_1_201811098627323.jpg" class="laptop" >
+    <img src="./img_product_page/ADYY_1_201811098627323.jpg" class="laptop" id="mainImage">
   <section class="galeria">
+      <img src="./img_product_page/ADYY_1_201811098627323.jpg" class="mini">
       <img src="./img_product_page/laptop1.webp" class="mini">
       <img src="./img_product_page/laptop2.webp" class="mini">
       <img src="./img_product_page/laptop3.webp" class="mini">
@@ -418,6 +419,7 @@
   <script src="./Script/HeaderPopup_nr.2.js"></script>
   <script src="./Script/HeaderPopup_nr.3.js"></script>
   <script src="./Script/UnderHeaderPopup_nr.1.js"></script>  
+  <script src="./Script/Products_view_Main.js"></script>  
 </body>
 </html>
 

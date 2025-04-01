@@ -1,26 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
     const products = [
         {
+            productID: 'P001',
+            category: ['Elektronika', 'Home'],
             img: './img/tvphoto.jpg',
             title: 'Laptop Dell Inspiron 15',
             oldPrice: '3399,00 zł',
             newPrice: '2999,99 zł',
+            stock: 10,
             description: 'Laptop Dell Inspiron 15, alalallalalalalallalalalalaalllallalalaaaaaaaaaaaaaaaaaaaaaaaaaa',
             payImg: './img/pay.png'
         },
         {
+            productID: 'P002',
+            category: 'Elektronika',
             img: './img/ps5.jpg',
             title: 'PlayStation 5',
             oldPrice: '2457,00 zł',
             newPrice: '2199,99 zł',
+            stock: 5,
             description: 'PlayStation 5 alalallalalalalallalalalalaalllallalalaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssss',
             payImg: './img/pay.png'
         },
         {
+            productID: 'P003',
+            category: 'Elektronika',
             img: './img/iphone.jpg',
             title: 'Telefon iPhone 15',
             oldPrice: '2699,00 zł',
             newPrice: '2199,99 zł',
+            stock: 3,
             description: 'Telefon iPhone 15 alalallalalalalallalalalalaalllallalalaaaaaaaaaaaaaaaaaaaaaaaaaa',
             payImg: './img/pay.png'
         }
@@ -35,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             productDiv.setAttribute('tabindex', '0');
             
             productDiv.innerHTML = `
-                <a href="Products_view.html">
+                <a href="Products_view.html?productID=${product.productID}">
                 <img src="${product.img}" alt="${product.title}">
                 <div class="smart-deal">
                     <div class="top">
@@ -68,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             
             container.appendChild(productDiv);
-       
         });
     }
 });
