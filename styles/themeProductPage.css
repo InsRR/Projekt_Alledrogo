@@ -126,14 +126,6 @@ body.dark .in-section a.logo {
     color: var(--secondary-color);
 }
 
-.search-container {
-    /*background-color: var(--background-light);*/
-}
-
-body.dark .search-container {
-    /*background-color: var(--background-dark);*/
-}
-
 .searchbar {
     background-color: var(--header-light);
     color: var(--text-light);

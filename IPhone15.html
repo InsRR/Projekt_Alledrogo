@@ -1,57 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const miniImages = document.querySelectorAll('.galeria .mini');
-  const mainImage = document.getElementById('mainImage');
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allegro Search Bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles/IPhone_product.css">
+<link rel="stylesheet" href="./styles/components.css">
+<link rel="stylesheet" href="./styles/layout.css">
+<link rel="stylesheet" href="./styles/themeProductPage.css">
+<link rel="stylesheet" href="./styles/variables.css">
+<link rel="stylesheet" href="./styles/reset.css">
+</head>
 
-  miniImages.forEach(function (miniImage) {
-      miniImage.addEventListener('click', function () {
-          mainImage.src = miniImage.src;
-      });
-  });
-
-
-const params = new URLSearchParams(window.location.search);
-const productID = params.get('productID');
-
-// Lista produktów (lub załaduj z zewnętrznego źródła)
-const products = [
-    {
-        productID: 'P001',
-        category: ['Elektronika', 'Home'],
-        img: ['./img/tvphoto.jpg','./img/pay.png', './img_product_page/ADYY_1_201811098627323.jpg','./img_product_page/laptop1.webp','./img_product_page/laptop2.webp','./img_product_page/laptop3.webp','./img_product_page/laptop4.webp','./img_product_page/dysk.png','./img_product_page/dell.png','./img_product_page/information-common-super-seller-236577cfa7.svg','./img_product_page/smart 1.svg','./img_product_page/pay 8.png', './img_product_page/clock.png','./img_product_page/deliverytruck.png','./img_product_page/shield.png','./img_product_page/wallet.png', './img_product_page/arrow.png'],
-        title: 'Laptop Dell Inspiron 15',
-        oldPrice: '3399,00 zł',
-        newPrice: '2999,99 zł',
-        stock: 10,
-        description: 'Laptop Dell Inspiron 15, alalallalalalalallalalalalaalllallalalaaaaaaaaaaaaaaaaaaaaaaaaaa',
-    },
-    {
-        productID: 'P002',
-        category: 'Elektronika',
-        img: ['./img_product_page/ps5.webp','./img/pay.png','./img_product_page/ps51.png','./img_product_page/ps52.png','./img_product_page/pad.png','./img_product_page/ps54.png','./img_product_page/action-common-share-8f2e34e3c1.svg','./img_product_page/action-common-heart-322d64f02b.svg','./img_product_page/information-common-super-seller-236577cfa7.svg','./img_product_page/smart 1.svg','./img_product_page/pay 8.png','./img_product_page/clock.png','./img_product_page/deliverytruck.png','./img_product_page/shield.png','./img_product_page/wallet.png','./img_product_page/arrow.png'],
-        title: 'PlayStation 5',
-        oldPrice: '2457,00 zł',
-        newPrice: '2199,99 zł',
-        stock: 5,
-        description: 'PlayStation 5 alalallalalalalallalalalalaalllallalalaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssss',
-    },
-    {
-        productID: 'P003',
-        category: 'Elektronika',
-        img: ['./img_product_page/action-common-share-8f2e34e3c1.svg','./img_product_page/action-common-heart-322d64f02b.svg','./img_product_page/Smartfon-APPLE-iPhone-15-128GB-5G-6.1-Niebieski-front-tyl.jpg','./img_product_page/ip15.jpg','./img_product_page/ip152.jpg','./img_product_page/ip153.jpg','./img_product_page/ip154.jpg','./img_product_page/Apple-Beats-Studio-Buds-douszne-sluchawki-bezprzewodowe-z-redukcja-halasu-biale-22605-680x680.webp','./img_product_page/smart 1.svg','./img_product_page/pay 8.png','./img_product_page/information-common-super-seller-236577cfa7.svg','./img_product_page/clock.png','./img_product_page/deliverytruck.png','./img_product_page/arrow.png','./img_product_page/shield.png','./img_product_page/wallet.png'],
-        title: 'Telefon iPhone 15',
-        oldPrice: '2699,00 zł',
-        newPrice: '2199,99 zł',
-        stock: 3,
-        description: 'Telefon iPhone 15 alalallalalalalallalalalalaalllallalalaaaaaaaaaaaaaaaaaaaaaaaaaa',
-        payImg: './img/pay.png'
-    }
-];
-
-const product = products.find(p => p.productID === productID);
-
-if (product) {
-    document.getElementById('product-container').innerHTML = `
-        <!-- Header Section -->
+<body>
+   <!-- Header Section -->
   <section class="header">
     <div class="up-section">
         <div class="in-section">
@@ -144,30 +109,32 @@ if (product) {
 <section class="toptop ">
   <a href="#">Allegro</a><span class="separator"> / </span>
   <a href="#">Elektronika</a><span class="separator"> / </span>
-  <a href="#">Komputery</a><span class="separator"> / </span>
-  <a href="#">Laptopy</a><span class="separator"> / </span>
-  <a href="#" class="current">Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD...</a>
+  <a href="#">Telefony i Akcesoria</a><span class="separator"> / </span>
+  <a href="#">Smartfony i telefony kamórkowe</a><span class="separator"> / </span>
+  <a href="#">Apple</a><span class="separator"> / </span>
+  <a href="#">iPhone 15</a><span class="separator"> / </span>
+  <a href="#" class="current">Smartfon Apple iPhone 15 128 GB 5G niebieski</a>
 </section>
 
 <main class="container">
   <section class="container-column">
   <section class="left-box ">
     <section class="up">
-    <p>Stan: <span class="new2">Nowy</span></p>
+    <p>Stan: <span class="new">Nowy</span></p>
     <img src="./img_product_page/action-common-share-8f2e34e3c1.svg">
     <img src="./img_product_page/action-common-heart-322d64f02b.svg">
     </section>
-    <h1>Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD <br>120Hz Win11 Silver</h1>
+    <h1>Smartfon Apple iPhone 15 128 GB 5G Blue</h1>
     <p class="os">2 osoby kupiły ostatnio</p>
-    <img src="./img_product_page/ADYY_1_201811098627323.jpg" class="laptop" id="mainImage">
+    <img src="./img_product_page/Smartfon-APPLE-iPhone-15-128GB-5G-6.1-Niebieski-front-tyl.jpg" class="laptop" id="mainImage">
   <section class="galeria">
-      <img src="./img_product_page/ADYY_1_201811098627323.jpg" class="mini">
-      <img src="./img_product_page/laptop1.webp" class="mini">
-      <img src="./img_product_page/laptop2.webp" class="mini">
-      <img src="./img_product_page/laptop3.webp" class="mini">
-      <img src="./img_product_page/laptop4.webp" class="mini">
-      <img src="./img_product_page/laptop2.webp" class="mini">
-      <img src="./img_product_page/laptop3.webp" class="mini">
+      <img src="./img_product_page/Smartfon-APPLE-iPhone-15-128GB-5G-6.1-Niebieski-front-tyl.jpg" class="mini">
+      <img src="./img_product_page/ip15.jpg" class="mini">
+      <img src="./img_product_page/ip152.jpg" class="mini">
+      <img src="./img_product_page/ip153.jpg" class="mini">
+      <img src="./img_product_page/ip154.jpg" class="mini">
+      <img src="./img_product_page/ip152.jpg" class="mini">
+      <img src="./img_product_page/ip15.jpg" class="mini">
   </section>
   </section>
 
@@ -175,24 +142,26 @@ if (product) {
     <h2>Kup razem</h2>
     <section class="bundle">
       <section class="bundle-images">
-        <img src="./img_product_page/ADYY_1_201811098627323.jpg">
+        <img src="./img_product_page/Smartfon-APPLE-iPhone-15-128GB-5G-6.1-Niebieski-front-tyl.jpg">
         <span class="plus">+</span>
-        <img src="./img_product_page/dysk.png">
+        <img src="./img_product_page/Apple-Beats-Studio-Buds-douszne-sluchawki-bezprzewodowe-z-redukcja-halasu-biale-22605-680x680.webp">
       </section>
       <section class="bundle-info">
-        <p class="product">
-        <a href="#">Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD<br> 15,6" FHD 120Hz Win11 Silver</a>
-        <span class="price">2999,99 zł</span>
+        <p class="productx">
+        <a href="#">Smartfon Apple iPhone 15 <br>128 GB 5G Blue</a>
+        <span class="price">3499,00 zł</span>
         </p>
-        <p class="product">
-        <a href="#">Przenośny zewnętrzny dysk SSD 1TB KINGSTON<br> XS1000R USB3.2 Red</a>
-        <span class="price">316,16 zł</span>
+        <p class="productx">
+        <a href="#">Apple Beats Studio Buds douszne słuchawki <br>bezprzewodowe z redukcją hałasu - białe</a>
+        <span class="price">649,00 zł</span>
         </p>
-        <p class="total-price">cena razem <span class=big>3316,</span><span class=small>15 zł</span></p>
+        <p class="total-price">cena razem <span class=big>4148,</span><span class=small>00 zł</span></p>
         <button class="add-to-cart">DODAJ ZESTAW DO KOSZYKA</button>
       </section>
     </section>
   </section>
+
+  
   <section class="left-box ">
       <h2>Parametry</h2>
       <section class="product-info">
@@ -205,29 +174,30 @@ if (product) {
         <span class="value">Wystawiam fakturę VAT</span>
         </section>
         <section class="row">
-        <span class="label">Marka</span>
-        <span class="value highlight">Dell</span>
+        <span class="label">Marka telefonu</span>
+        <span class="value highlight">Apple</span>
         </section>
         <section class="row">
-        <span class="label">Stan opakowania</span>
-        <span class="value">oryginalne</span>
+        <span class="label">Model telefonu</span>
+        <span class="value">iPhone 15</span>
         </section>
-        <section class="row">
-        <span class="label">Model</span>
-        <span class="value">Inspiron 15 3520 i5 Silver Win11</span>
-        </section>
-        <section class="row">
-        <span class="label">Typ</span>
-        <span class="value">standardowy</span>
-        </section>
-        <seection class="row">
-        <span class="label">Układ klawiatury</span>
-        <span class="value">US international (qwerty)</span>
-        </seection>
         <section class="row">
         <span class="label">Kod producenta</span>
-        <span class="value">3520-9997</span>
+        <span class="value">MTP43SX/A</span>
         </section>
+        
+        <seection class="row">
+        <span class="label">Typ</span>
+        <span class="value">Smartfon</span>
+        </seection>
+        <section class="row">
+        <span class="label">EAN (GTIN)</span>
+        <span class="value">0195949036521</span>
+        </section>
+        <seection class="row">
+          <span class="label">Kolor</span>
+          <span class="value">niebieski</span>
+          </seection>
         <section class="full-width-line">
         <a href="#">WSZYSTKIE PARAMETRY</a>
         </section>
@@ -236,97 +206,88 @@ if (product) {
 
   <section class="left-box ">
     <h2>Opis</h2>
-    <h3>Notebook DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD W11</h3>
+    <h3>Smartfon Apple iPhone 15 6 GB/128 GB 5G Blue</h3>
     <div class="product-container">
       <div class="product-text">
-          <h2>Dzisiejszy projekt przyszłości - DELL Inspiron 15 3520</h2>
+          <h2>Nowe portrety. Fokus, pokus, pstryk i łał.</h2>
           <p>
-          To urządzenie zapewnia wysoką wydajność i ciche działanie. Zostało wyposażone w wydajny procesor
-          i szybki dysk SSD PCIe. Korzystaj z dużych klawiszy i touchpada, które ułatwiają nawigację po treściach
-          i w oprogramowaniu ComfortView. To rozwiązanie z certyfikatem TUV Rheinland ograniczające emisję
-          szkodliwego niebieskiego światła. Dzięki temu możesz korzystać z urządzenia przez długi czas
-          bez nadwyrężania wzroku. Ponadto możesz korzystać z wyświetlacza FHD z elegancką, wąską obwódką
-          z trzech stron.
+            Portrety Twojego autorstwa będą zachwycać dzięki precyzyjnym detalom i intensywnym barwom. Teraz możesz jednym stuknięciem zmienić punkt ostrości na innym obiekcie – nawet po wykonaniu zdjęcia. To prawdziwa magia. Chcesz uchwycić ulotny moment? Nie musisz ręcznie przełączać się na tryb Portret. iPhone 15 automatycznie zapisze informacje o głębi ostrości, gdy fotografujesz człowieka, kota lub psa. Dzięki temu możesz od razu cieszyć się zdjęciem z pięknie rozmytym tłem albo dodać ten efekt później w aplikacji Zdjęcia.
           </p>
       </div>
       <div class="product-image">
-        <img src="./img_product_page/ADYY_1_201811098627323.jpg" >
+        <img src="./img_product_page/Smartfon-APPLE-iPhone-15-128GB-5G-6.1-Niebieski-front-tyl.jpg" >
       </div>
   </div>
   <div class="product-container">
     <div class="product-text">
-        <h2 class="large">Microsoft Windows 11 Home</h2>
+        <h2 class="large">Przybliż zbliżenie.</h2>
         <p>
-        System Windows 11 został zaprojektowany z myślą o intuicyjności, personalizacji i ogromnych możliwościach. Dzięki niemu łatwiej utrzymać porządek, sprawnie przełączać się między zadaniami i płynnie uruchamiać gry. Niezależnie od tego, co planujesz, znajdziesz funkcję lub narzędzie stworzone, by ułatwić codzienne działania i uczynić je jeszcze bardziej wyjątkowymi.
+          Dzięki zoomowi 2x o jakości optycznej możesz uchwycić idealny portret, nawet bez podchodzenia blisko do fotografowanego obiektu. A jeśli to wciąż za mało, płynny zoom pozwoli Ci jeszcze bardziej przybliżyć obraz, zachowując wysoką jakość. Bez względu na to, czy fotografujesz bliskich, zwierzęta czy krajobrazy, każdy detal pozostanie ostry i pełen głębi. Zaawansowana technologia przetwarzania obrazu dba o naturalne kolory i wyrazisty kontrast, dzięki czemu Twoje zdjęcia zawsze wyglądają imponująco.
         </p>
     </div>
     <div class="product-image">
-      <img src="./img_product_page/laptop1.webp"class="one" >
+      <img src="./img_product_page/ip153.jpg"class="one" >
     </div>
 </div>
 <div class="product-container">
   <div class="product-text">
-      <h2 class="large">Nowoczesny Design</h2>
+      <h2 class="large">Photonic Engine. Fantastyczne fotki.</h2>
       <p>
-      Dzięki wbudowanej kamerze zawsze będziesz wyglądać świetnie i czuć się pewnie. Twój komputer stacjonarny został zaprojektowany z myślą o codziennym użytkowaniu. Wyposażono go w małe gumowe nóżki oraz ochronne elementy zawiasu, które zapobiegają ślizganiu się i zapewniają większą stabilność na twardych powierzchniach.
+        Nowy Photonic Engine sprawia, że portrety wyglądają jeszcze lepiej. Wykorzystuje najwyższej jakości piksele z ultrawysokiej rozdzielczości i łączy je ze zdjęciem zoptymalizowanym pod kątem światła. Efektem jest obraz o rozdzielczości 24 MP – dwa razy większej niż standardowo, a jednocześnie w pliku na tyle kompaktowym, że bez problemu go przechowasz i udostępnisz. Idealne rozwiązanie na codzienne fotografowanie.
       </p>
   </div>
   <div class="product-image">
-    <img src="./img_product_page/laptop2.webp"class="one" >
+    <img src="./img_product_page/ip152.jpg"class="one" >
   </div>
 </div>
 <div class="product-container">
   <div class="product-text">
-      <h2 class="large">Procesor nowej generacji</h2>
-      <h2 class="large">Intel Core i5-1235U 10 rdzeni, 12 wątków, do 3.30 / 4.40 GHz, 12 MB</h2>
+      
+      <h2 class="large">Czip A16 Bionic. Megamoc Pro.</h2>
       <p>
-      Intel Core i5-1235U to 10-rdzeniowy procesor, który osiąga maksymalną częstotliwość taktowania do 4,4 GHz, co pozwala mu bez trudu poradzić sobie z wymagającymi zadaniami produktywności i równoczesnym przetwarzaniem wielu procesów. Doświadcz znacznego wzrostu wydajności i wyjątkowo płynnej pracy. Pracuj, twórz i edytuj w swoim tempie dzięki szybkiemu procesorowi Intel.
+        Czip A16 Bionic napędza przeróżne zaawansowane rozwiązania. To dzięki niemu możesz robić zdjęcia 24 MP i jeszcze lepsze portrety z artystycznym rozmyciem tła. Jego moc odpowiada też za izolowanie głosu podczas połączeń telefonicznych, co sprawia, że rozmowy są jeszcze wyraźniejsze, oraz za niezwykłą płynność gier o intensywnej grafice. Wszystko to działa z wyjątkową energooszczędnością, co przekłada się na dłuższy czas pracy na baterii – nawet przy wymagających zadaniach. Do tego dochodzi błyskawiczne przetwarzanie danych i większa responsywność systemu, dzięki czemu codzienne korzystanie z iPhone’a jest jeszcze płynniejsze. Wiadomo dlaczego: A16 Bionic zaczynał karierę od modeli Pro i teraz wnosi najwyższą wydajność do Twoich rąk.
       </p>
   </div>
   <div class="product-image">
-    <img src="./img_product_page/laptop3.webp"class="two" >
+    <img src="./img_product_page/ip15.jpg"class="two" >
   </div>
 </div>
 <div class="product-container">
   <div class="product-text">
-      <h2 class="large">Niesamowity dźwięk</h2>
+      <h2 class="large">USB-C. Kompatybilność.</h2>
       <p>
-      Będziesz pewny, że Twoje słowa będą doskonale słyszalne, dzięki dwóm wbudowanym mikrofonom z technologią sztucznej inteligencji, która skutecznie redukuje hałas tła. Dodatkowo głośniki z funkcją Waves MaxxAudio® Pro gwarantują wyraźny dźwięk i odpowiednią głośność, dzięki czemu każde słowo będzie brzmiało czysto i wyraźnie.
+        Nowe złącze USB-C pozwala ładować Maca i iPada tym samym przewodem, którym ładujesz iPhone’a 15. A nawet ładować Apple Watch lub AirPods bezpośrednio z iPhone’a 15. Żegnajcie, kłęby kabli. Teraz jedno złącze wystarczy do wielu urządzeń, co sprawia, że Twoje życie staje się prostsze i bardziej zorganizowane. Złącze USB-C to nie tylko wygoda, ale i szybkie ładowanie, które zaoszczędzi Ci czas. Niezależnie od tego, gdzie jesteś – wszystko, co potrzebujesz, mieści się w jednym kablu.
       </p>
   </div>
   <div class="product-image">
-    <img src="./img_product_page/laptop4.webp"class="one" >
+    <img src="./img_product_page/ip154.jpg"class="one" >
   </div>
 </div>
 
 <div class="product-container">
   <div class="product-text">
-    <h2 class="xlarge">Specyfikacja</h2>
-    <li><strong>Procesor:</strong> Intel Core i5-1235U (10 rdzeni, 12 wątków, 3.30-4.40 GHz, 12MB cache)</li>
-    <li><strong>Pamięć:</strong> RAM 32 GB (DDR4, 2666 MHz)</li>
-    <li><strong>Pojemność dysku SSD:</strong> 1 TB</li>
-    <li><strong>Karta graficzna:</strong> Intel Iris Xe Graphics</li>
-    <li><strong>Typ ekranu:</strong> Matowy, LED, WVA</li>
-    <li><strong>Przekątna ekranu:</strong> 15,6"</li>
-    <li><strong>Rozdzielczość ekranu:</strong> 1920 x 1080 (Full HD)</li>
-    <li><strong>Dźwięk:</strong> Wbudowane głośniki stereo, Wbudowany mikrofon</li>
-    <li><strong>Złącza:</strong> USB 2.0 - 1 szt., USB 3.2 Gen. 1 - 2 szt., USB 3.2 Gen. 1 - 2 szt., HDMI 1.4 - 1 szt., DC-in (wejście zasilania) - 1 szt.</li>
-    <li><strong>Podświetlana klawiatura:</strong> Nie</li>
-    <li><strong>Pojemność baterii:</strong> 3-komorowa, 3467 mAh</li>
-    <li><strong>System operacyjny:</strong> Microsoft Windows 11 Home</li>
-    <li><strong>Łączność:</strong> Wi-Fi 6, Moduł Bluetooth 5.2</li>
+    <h2 class="xlarge">Dane techniczne</h2>
+    <li><strong>Wyświetlacz:</strong> 6.1", 2532 x 1170px, OLED, Super Retina XDR </li>
+    <li><strong>Pamięć wbudowana:</strong> 128 GB</li>
+    <li><strong>Aparat:</strong> Tylny 48 Mpx + 12 Mpx, Przedni 12 Mpx</li>
+    <li><strong>Model procesora:</strong> Apple A16 Bionic</li>
+    <li><strong>Liczba rdzeni procesora:</strong> Sześciordzeniowy </li>
+    <li><strong>System operacyjny:</strong> iOS </li>
+    <li><strong>Wersja systemu:</strong> iOS 17 </li>
+    <li><strong>NFC:</strong>Tak </li>
+    <li><strong>5G:</strong> Tak </li>
+    <li><strong>Kolor obudowy:</strong> Niebieski </li>
+    
   </div>
-  <div class="product-image">
-    <img src="./img_product_page/dell.png"class="dell" >
-  </div>
+  
 </div>
 <div class="images">
-  <img src="./img_product_page/ADYY_1_201811098627323.jpg" >
-  <img src="./img_product_page/laptop2.webp" >
+  <img src="./img_product_page/Smartfon-APPLE-iPhone-15-128GB-5G-6.1-Niebieski-front-tyl.jpg" >
+  <img src="./img_product_page/ip15.jpg" >
 </div>
 <div class="images">
-  <img src="./img_product_page/laptop1.webp" >
-  <img src="./img_product_page/laptop3.webp" >
+  <img src="./img_product_page/ip152.jpg" >
+  <img src="./img_product_page/ip153.jpg" >
 </div>
   </section>
   </section>
@@ -344,7 +305,7 @@ if (product) {
       <hr class="full">
       <p class="super">SUPERCENA</p>
       <section class="cena">
-      <p>2999,<span class="zl">99 zł</span></p>
+      <p>3499,<span class="zl">00 zł</span></p>
       <img src="./img_product_page/smart 1.svg">
     </section>
     <section class="check ">
@@ -403,10 +364,10 @@ if (product) {
 
   <section class=" right-box">
     <h2>Inne oferty produktu<span class="info-icon">ⓘ</span></h2>
-    <p class="inne">Laptop Dell Inspiron 15 3520 i5 Silver Win11 15,6 " <br>Intel Core i5 32 GB / 1000 GB srebrny</p>
+    <p class="inne">Smartfon Apple iPhone 15 128 GB 5G Blue</p>
     <p class="nn">NAJTAŃSZE - NOWE</p>
     <section class="cenasm">
-      <p>2999,<span class="zl">99 zł</span></p>
+      <p>3499,<span class="zl">00 zł</span></p>
       <img src="./img_product_page/smart 1.svg">
       <img src="./img_product_page/arrow.png"class="arrow">
     </section>
@@ -414,7 +375,7 @@ if (product) {
     <hr>
     <p class="nn">NAJSZYBCIEJ</p>
     <section class="cenasm">
-      <p>2999,<span class="zl">99 zł</span></p>
+      <p>3499,<span class="zl">00 zł</span></p>
       <img src="./img_product_page/smart 1.svg">
       <img src="./img_product_page/arrow.png"class="arrow">
     </section>
@@ -436,7 +397,7 @@ if (product) {
     <p class="po">kupujących poleciło tego sprzedawcę w<br> ostatnich 12 miesiącach</p>
   </section>
   <hr class="full">
-  <p class="teal">Inne przedmioty sprzedającego z kategorii <strong>Laptopy</strong></p>
+  <p class="teal">Inne przedmioty sprzedającego z kategorii <strong>Smartfony</strong></p>
   <hr>
   <p class="tealx">Wszystkie przedmioty sprzedającego</p>
   <hr class="full">
@@ -447,12 +408,15 @@ if (product) {
   </section>
 </section>
 </section>
-</main> 
-<section class="footer-section" id="footer-container"></section>  
-    `;
-} else {
-    document.getElementById('product-container').innerHTML = '<p>Produkt nie znaleziony</p>';
-}
+</main>
+<section class="footer-section" id="footer-container"></section>
+  <script src="./Script/Footer.js"></script>
+  <script src="./Script/HeaderPopup_nr.1.js"></script>
+  <script src="./Script/HeaderPopup_nr.2.js"></script>
+  <script src="./Script/HeaderPopup_nr.3.js"></script>
+  <script src="./Script/UnderHeaderPopup_nr.1.js"></script>  
+  <script src="./Script/Products_view_Main.js"></script>   
+</body>
+</html>
 
-  
-});
+
