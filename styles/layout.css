@@ -1,4 +1,4 @@
-/* Centralna sekcja strony */
+/* Center Section */
 .center-section {
     width: 85.4375rem;
     height: auto;
@@ -75,7 +75,7 @@ box-sizing: border-box;
     z-index: 1;
 }
 /*----------------------------------------------------------------------------------------------------*/
-/* Sekcja z "okazjami" */
+/* Ocasion Sections */
 .under-center-section {
     display: flex;
     height: auto;
@@ -128,7 +128,7 @@ box-sizing: border-box;
     cursor: pointer;
 }
 /*----------------------------------------------------------------------------------------------------------------*/
-/* Sekcja produktów */
+/* Product Section */
 .section-offers {
     display: flex;
     flex-direction: column;
@@ -240,7 +240,7 @@ box-sizing: border-box;
     font-weight: 600;
 }
 /*------------------------------------------------------------------------------------------------------------------------*/
-/* Sekcja z pytaniami */
+/* Questions Section */
 .footer-section {
     width: 85.4375rem;
     height: auto;
@@ -276,7 +276,7 @@ box-sizing: border-box;
     width: 22rem;
 }
 /*--------------------------------------------------------------------------------------------------*/
-/* Stopka allegro */
+/* Footer allegro */
 .footer {
     display: flex;
     flex-wrap: wrap;
@@ -324,7 +324,7 @@ box-sizing: border-box;
     font-size: 40px;
 }
 /*---------------------------------------------------------------------------------------------------*/
-/* Sekcja Końcowa */
+/* end Section */
 .end-section {
     width: 85.4375rem;
     height: auto;
@@ -397,7 +397,7 @@ box-sizing: border-box;
     height: 20rem;
 }
 .under-center-section {
-    overflow-x: hidden; /* Zapobiega poziomemu przewijaniu */
+    overflow-x: hidden; 
 }
 
 .section-offers {
@@ -411,7 +411,7 @@ box-sizing: border-box;
     margin-top: 3rem;
     position: relative;
     z-index: 1;
-    overflow: hidden; /* Dodane */
+    overflow: hidden; 
 }
 
 .offers {
@@ -449,7 +449,7 @@ box-sizing: border-box;
     margin-top: 4rem;
     position: relative;
     flex-wrap: wrap;
-    overflow: hidden; /* Dodane */
+    overflow: hidden; 
 }
 
 /*footer*/
@@ -562,9 +562,9 @@ box-sizing: border-box;
     }
 
     .phone-footer a span {
-        display: block; /* Ensures the text is below the icon */
+        display: block; 
         font-size: 0.75rem;
         color: #333;
-        margin-top: 0.25rem; /* Adds spacing between the icon and the text */
+        margin-top: 0.25rem; 
     }
   }

@@ -630,3 +630,52 @@ h2{
   }
 
   }
+
+  @media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .container {
+        scale: 0.8;
+        margin: -26rem;
+    }
+}
+
+
+@media screen and (max-width: 450px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .toptop {
+      margin: 3.5rem 20px 30px 20px;
+  }
+
+.container {
+  scale: 0.5;
+  margin: -87rem;
+}
+
+
+  .phone-buttons{
+    position: fixed;
+    bottom: 4rem;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .button {
+    width: 180px;
+    padding: 8px;
+    margin: 5px 0;
+    text-align: center;
+    background-color: #ff6600;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+}
