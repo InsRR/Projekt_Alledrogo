@@ -1,12 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const miniImages = document.querySelectorAll('.galeria .mini');
-  const mainImage = document.getElementById('mainImage');
 
-  miniImages.forEach(function (miniImage) {
-      miniImage.addEventListener('click', function () {
-          mainImage.src = miniImage.src;
-      });
-  });
 
 
 const params = new URLSearchParams(window.location.search);
@@ -17,33 +10,123 @@ const products = [
     {
         productID: 'P001',
         category: ['Elektronika', 'Home'],
-        img: ['./img/tvphoto.jpg','./img/pay.png', './img_product_page/ADYY_1_201811098627323.jpg','./img_product_page/laptop1.webp','./img_product_page/laptop2.webp','./img_product_page/laptop3.webp','./img_product_page/laptop4.webp','./img_product_page/dysk.png','./img_product_page/dell.png','./img_product_page/information-common-super-seller-236577cfa7.svg','./img_product_page/smart 1.svg','./img_product_page/pay 8.png', './img_product_page/clock.png','./img_product_page/deliverytruck.png','./img_product_page/shield.png','./img_product_page/wallet.png', './img_product_page/arrow.png'],
-        title: 'Laptop Dell Inspiron 15',
+        img: [ './img_product_page/ADYY_1_201811098627323.jpg','./img_product_page/laptop1.webp','./img_product_page/laptop2.webp','./img_product_page/laptop3.webp','./img_product_page/laptop4.webp','./img_product_page/laptop2.webp','./img_product_page/laptop3.webp','./img_product_page/dysk.png','./img_product_page/dell.png'],
+        title: 'Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD <br>120Hz Win11 Silver',
         oldPrice: '3399,00 zł',
         newPrice: '2999,99 zł',
         stock: 10,
-        description: 'Laptop Dell Inspiron 15, alalallalalalalallalalalalaalllallalalaaaaaaaaaaaaaaaaaaaaaaaaaa',
+        description: ["Stan" , "Nowy","Faktura","Wystawiam fakturę VAT","Marka","Dell","Stan opakowania","oryginalne","Model","Inspiron 15 3520 i5 Silver Win11","Typ","standardowy","Układ klawiatury","US international (qwerty)","Kod producenta","3520-9997"],
+        description2: [
+          "Dzisiejszy projekt przyszłości - DELL Inspiron 15 3520", 
+          "To urządzenie zapewnia wysoką wydajność i ciche działanie. Zostało wyposażone w wydajny procesor i szybki dysk SSD PCIe. Korzystaj z dużych klawiszy i touchpada, które ułatwiają nawigację po treściach i w oprogramowaniu ComfortView. To rozwiązanie z certyfikatem TUV Rheinland ograniczające emisję szkodliwego niebieskiego światła. Dzięki temu możesz korzystać z urządzenia przez długi czas bez nadwyrężania wzroku. Ponadto możesz korzystać z wyświetlacza FHD z elegancką, wąską obwódką z trzech stron.",
+          
+          "Microsoft Windows 11 Home", 
+          "System Windows 11 został zaprojektowany z myślą o intuicyjności, personalizacji i ogromnych możliwościach. Dzięki niemu łatwiej utrzymać porządek, sprawnie przełączać się między zadaniami i płynnie uruchamiać gry. Niezależnie od tego, co planujesz, znajdziesz funkcję lub narzędzie stworzone, by ułatwić codzienne działania i uczynić je jeszcze bardziej wyjątkowymi.",
+          
+          "Nowoczesny Design", 
+          "Dzięki wbudowanej kamerze zawsze będziesz wyglądać świetnie i czuć się pewnie. Twój komputer stacjonarny został zaprojektowany z myślą o codziennym użytkowaniu. Wyposażono go w małe gumowe nóżki oraz ochronne elementy zawiasu, które zapobiegają ślizganiu się i zapewniają większą stabilność na twardych powierzchniach.",
+          
+          "Procesor nowej generacji", 
+          "Intel Core i5-1235U 10 rdzeni, 12 wątków, do 3.30 / 4.40 GHz, 12 MB", 
+          "Intel Core i5-1235U to 10-rdzeniowy procesor, który osiąga maksymalną częstotliwość taktowania do 4,4 GHz, co pozwala mu bez trudu poradzić sobie z wymagającymi zadaniami produktywności i równoczesnym przetwarzaniem wielu procesów. Doświadcz znacznego wzrostu wydajności i wyjątkowo płynnej pracy. Pracuj, twórz i edytuj w swoim tempie dzięki szybkiemu procesorowi Intel.",
+          
+          "Niesamowity dźwięk", 
+          "Będziesz pewny, że Twoje słowa będą doskonale słyszalne, dzięki dwóm wbudowanym mikrofonom z technologią sztucznej inteligencji, która skutecznie redukuje hałas tła. Dodatkowo głośniki z funkcją Waves MaxxAudio® Pro gwarantują wyraźny dźwięk i odpowiednią głośność, dzięki czemu każde słowo będzie brzmiało czysto i wyraźnie."
+        ],
+        description3: [
+          "Procesor:", "Intel Core i5-1235U (10 rdzeni, 12 wątków, 3.30-4.40 GHz, 12MB cache)",
+          "Pamięć:", "RAM 32 GB (DDR4, 2666 MHz)",
+          "Pojemność dysku SSD:", "1 TB",
+          "Karta graficzna:", "Intel Iris Xe Graphics",
+          "Typ ekranu:", "Matowy, LED, WVA",
+          "Przekątna ekranu:", '15,6"',
+          "Rozdzielczość ekranu:", "1920 x 1080 (Full HD)",
+          "Dźwięk:", "Wbudowane głośniki stereo, Wbudowany mikrofon",
+          "Złącza:", "USB 2.0 - 1 szt., USB 3.2 Gen. 1 - 2 szt., USB 3.2 Gen. 1 - 2 szt., HDMI 1.4 - 1 szt., DC-in (wejście zasilania) - 1 szt.",
+          "Podświetlana klawiatura:", "Nie",
+          "Pojemność baterii:", "3-komorowa, 3467 mAh",
+          "System operacyjny:", "Microsoft Windows 11 Home",
+          "Łączność:", "Wi-Fi 6, Moduł Bluetooth 5.2"
+        ]
+        
     },
     {
         productID: 'P002',
         category: 'Elektronika',
-        img: ['./img_product_page/ps5.webp','./img/pay.png','./img_product_page/ps51.png','./img_product_page/ps52.png','./img_product_page/pad.png','./img_product_page/ps54.png','./img_product_page/action-common-share-8f2e34e3c1.svg','./img_product_page/action-common-heart-322d64f02b.svg','./img_product_page/information-common-super-seller-236577cfa7.svg','./img_product_page/smart 1.svg','./img_product_page/pay 8.png','./img_product_page/clock.png','./img_product_page/deliverytruck.png','./img_product_page/shield.png','./img_product_page/wallet.png','./img_product_page/arrow.png'],
-        title: 'PlayStation 5',
+        img: ['./img_product_page/ps5.webp','./img_product_page/ps51.png','./img_product_page/ps52.png','./img_product_page/pad.png','./img_product_page/ps54.png','./img_product_page/ps52.png','./img_product_page/ps51.png',],
+        title: 'Konsola Sony PlayStation 5 Pro 2TB PS5 Digital Bez Napędu',
         oldPrice: '2457,00 zł',
         newPrice: '2199,99 zł',
         stock: 5,
-        description: 'PlayStation 5 alalallalalalalallalalalalaalllallalalaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssss',
+        description: ["Stan", "Nowy","Faktura", "Wystawiam fakturę VAT","Waga produktu z opakowaniem jednostkowym", "5.035 kg","EAN (GTIN)", "0711719577478","Kod producenta", "CFI-2016","Wersja", "PlayStation 5 Pro","Informacje o bezpieczeństwie", "CE"],
+        description2: [
+          "2 TB pamięci masowej", 
+          "Dzięki 2 TB pamięci SSD możesz błyskawicznie zacząć grać w swoje ulubione gry. Konsola Sony PlayStation 5 Pro jest wyposażona w ulepszony procesor graficzny, który ma aż o 67% więcej jednostek obliczeniowych niż standardowy model PS5 oraz o 28% szybszą pamięć.Dzięki temu możesz cieszyć się jeszcze płynniejszą rozgrywką w rozdzielczości 4K przy wyższej liczbie klatek na sekundę, a także krótszymi czasami ładowania. Dodatkowo, zaawansowany system chłodzenia zapewnia stabilną wydajność nawet podczas najbardziej wymagających sesji gamingowych.",
+          
+          "Łączność bezprzewodowa na zupełnie nowym poziomie", 
+          "PS5 Pro obsługuje rozszerzone możliwości bezprzewodowego Internetu i większą przepustowość, zwiększając szybkość transmisji dzięki IEEE 802.11be i zgodnemu routerowi, co oznacza, że podczas gry online możesz zauważyć zmniejszone opóźnienie i większą stabilność.",
+          
+          "PS5 ProGame Boost i wsteczna kompatybilność.",
+          "Na konsoli PS5 Pro można grać w ponad 8500 gier na PS4™. Dzięki funkcji Game Boost w wersji na PS5 Pro będziesz cieszyć się większą, bardziej płynną szybkością klatek w niektórych z najlepszych gier na konsole PS4 i PS5.",
+          
+          "Kontroler bezprzewodowy DualSense", 
+          "Wykorzystaj moc PS5 Pro dzięki niesamowitym funkcjom dotykowym innowacyjnego kontrolera bezprzewodowego DualSense. Grając za pomocą kontrolera bezprzewodowego DualSense, możesz korzystać z efektów dotykowych w wybranych grach na PS5. Poznaj możliwości adaptacyjnych efektów „Trigger” w wybranych tytułach na PS5. Dzięki precyzyjnym efektom dotykowym poczujesz każdy ruch, wstrząs i napięcie, co sprawi, że rozgrywka stanie się jeszcze bardziej immersyjna. Dodatkowo, wbudowany mikrofon i głośnik w kontrolerze DualSense pozwolą Ci lepiej komunikować się z drużyną oraz doświadczyć dźwięku w zupełnie nowy sposób.",
+          
+          "Stworzone z myślą o błyskawicznej prędkości", 
+          "Zainstalowane na konsoli PS5 gry będą ładować się w mgnieniu oka. Dzięki niestandardowej integracji systemów konsoli PS5 Pro dane z dysku SSD są odczytywane z zawrotną szybkością, co daje twórcom gier nieosiągalne dotąd możliwości. Najdrobniejsze szczegóły ożywają na ekranie telewizora 4K w zgodnych grach na PS5."
+        ],
+        description3: [
+          "Procesor:", "8 rdzeni AMD Zen 2 - do 3.9 GHz",
+          "Pamięć:", "RAM 16 GB",
+          "Chip graficzny:", "AMD RDNA 3 33,5 TFLOPS",
+          "Wyposażenie:", "Kontroler w zestawie",
+          "Odtwarza pliki wideo (filmy):", "tak",
+          "Wi-Fi:", "tak",
+          "Bluetooth:", "tak",
+          "Pamięć:", "2 TB",
+          "Złącza:", "Wyjście wideo - Port HDMI OUT, wsparcie telewizorów 4K 120 Hz, telewizorów 8K, VRR (obsługiwane przez HDMI 2.1). Dźwięk - „Tempest” 3D AudioTech",
+          "Gry w zestawie:", "Astro's Playroom"
+        ]
+        
     },
     {
         productID: 'P003',
         category: 'Elektronika',
-        img: ['./img_product_page/action-common-share-8f2e34e3c1.svg','./img_product_page/action-common-heart-322d64f02b.svg','./img_product_page/Smartfon-APPLE-iPhone-15-128GB-5G-6.1-Niebieski-front-tyl.jpg','./img_product_page/ip15.jpg','./img_product_page/ip152.jpg','./img_product_page/ip153.jpg','./img_product_page/ip154.jpg','./img_product_page/Apple-Beats-Studio-Buds-douszne-sluchawki-bezprzewodowe-z-redukcja-halasu-biale-22605-680x680.webp','./img_product_page/smart 1.svg','./img_product_page/pay 8.png','./img_product_page/information-common-super-seller-236577cfa7.svg','./img_product_page/clock.png','./img_product_page/deliverytruck.png','./img_product_page/arrow.png','./img_product_page/shield.png','./img_product_page/wallet.png'],
-        title: 'Telefon iPhone 15',
+        img: ['./img_product_page/Smartfon-APPLE-iPhone-15-128GB-5G-6.1-Niebieski-front-tyl.jpg','./img_product_page/ip15.jpg','./img_product_page/ip152.jpg','./img_product_page/ip153.jpg','./img_product_page/ip154.jpg','./img_product_page/ip15.jpg','./img_product_page/ip152.jpg','./img_product_page/Apple-Beats-Studio-Buds-douszne-sluchawki-bezprzewodowe-z-redukcja-halasu-biale-22605-680x680.webp'],
+        title: 'Smartfon Apple iPhone 15 128 GB 5G Blue',
         oldPrice: '2699,00 zł',
         newPrice: '2199,99 zł',
         stock: 3,
-        description: 'Telefon iPhone 15 alalallalalalalallalalalalaalllallalalaaaaaaaaaaaaaaaaaaaaaaaaaa',
-        payImg: './img/pay.png'
+        description: ["Stan", "Nowy","Faktura", "Wystawiam fakturę VAT","Marka telefonu", "Apple","Model telefonu", "iPhone 15","Kod producenta", "MTP43SX/A","Typ", "Smartfon","EAN (GTIN)", "0195949036521","Kolor", "niebieski"],
+        description2: [
+          "Nowe portrety. Fokus, pokus, pstryk i łał.", 
+          "Portrety Twojego autorstwa będą zachwycać dzięki precyzyjnym detalom i intensywnym barwom. Teraz możesz jednym stuknięciem zmienić punkt ostrości na innym obiekcie – nawet po wykonaniu zdjęcia. To prawdziwa magia. Chcesz uchwycić ulotny moment? Nie musisz ręcznie przełączać się na tryb Portret. iPhone 15 automatycznie zapisze informacje o głębi ostrości, gdy fotografujesz człowieka, kota lub psa. Dzięki temu możesz od razu cieszyć się zdjęciem z pięknie rozmytym tłem albo dodać ten efekt później w aplikacji Zdjęcia.",
+          
+          "Przybliż zbliżenie.",
+          "Dzięki zoomowi 2x o jakości optycznej możesz uchwycić idealny portret, nawet bez podchodzenia blisko do fotografowanego obiektu. A jeśli to wciąż za mało, płynny zoom pozwoli Ci jeszcze bardziej przybliżyć obraz, zachowując wysoką jakość. Bez względu na to, czy fotografujesz bliskich, zwierzęta czy krajobrazy, każdy detal pozostanie ostry i pełen głębi. Zaawansowana technologia przetwarzania obrazu dba o naturalne kolory i wyrazisty kontrast, dzięki czemu Twoje zdjęcia zawsze wyglądają imponująco.",
+          
+          "Photonic Engine. Fantastyczne fotki.",
+          "Nowy Photonic Engine sprawia, że portrety wyglądają jeszcze lepiej. Wykorzystuje najwyższej jakości piksele z ultrawysokiej rozdzielczości i łączy je ze zdjęciem zoptymalizowanym pod kątem światła. Efektem jest obraz o rozdzielczości 24 MP – dwa razy większej niż standardowo, a jednocześnie w pliku na tyle kompaktowym, że bez problemu go przechowasz i udostępnisz. Idealne rozwiązanie na codzienne fotografowanie.",
+          
+          "Czip A16 Bionic. Megamoc Pro.",
+          "Czip A16 Bionic napędza przeróżne zaawansowane rozwiązania. To dzięki niemu możesz robić zdjęcia 24 MP i jeszcze lepsze portrety z artystycznym rozmyciem tła. Jego moc odpowiada też za izolowanie głosu podczas połączeń telefonicznych, co sprawia, że rozmowy są jeszcze wyraźniejsze, oraz za niezwykłą płynność gier o intensywnej grafice. Wszystko to działa z wyjątkową energooszczędnością, co przekłada się na dłuższy czas pracy na baterii – nawet przy wymagających zadaniach. Do tego dochodzi błyskawiczne przetwarzanie danych i większa responsywność systemu, dzięki czemu codzienne korzystanie z iPhone’a jest jeszcze płynniejsze. Wiadomo dlaczego: A16 Bionic zaczynał karierę od modeli Pro i teraz wnosi najwyższą wydajność do Twoich rąk.",
+          
+          "USB-C. Kompatybilność.",
+          "Nowe złącze USB-C pozwala ładować Maca i iPada tym samym przewodem, którym ładujesz iPhone’a 15. A nawet ładować Apple Watch lub AirPods bezpośrednio z iPhone’a 15. Żegnajcie, kłęby kabli. Teraz jedno złącze wystarczy do wielu urządzeń, co sprawia, że Twoje życie staje się prostsze i bardziej zorganizowane. Złącze USB-C to nie tylko wygoda, ale i szybkie ładowanie, które zaoszczędzi Ci czas. Niezależnie od tego, gdzie jesteś – wszystko, co potrzebujesz, mieści się w jednym kablu."
+        ],
+        description3: [
+          "Wyświetlacz:", "6.1\", 2532 x 1170px, OLED, Super Retina XDR",
+          "Pamięć wbudowana:", "128 GB",
+          "Aparat:", "Tylny 48 Mpx + 12 Mpx, Przedni 12 Mpx",
+          "Model procesora:", "Apple A16 Bionic",
+          "Liczba rdzeni procesora:", "Sześciordzeniowy",
+          "System operacyjny:", "iOS",
+          "Wersja systemu:", "iOS 17",
+          "NFC:", "Tak",
+          "5G:", "Tak",
+          "Kolor obudowy:", "Niebieski"
+        ]
+        
     }
 ];
 
@@ -297,7 +380,7 @@ if (product) {
     <section class="bundle-info">
       <p class="product">
       <a href="#">Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD<br> 15,6" FHD 120Hz Win11 Silver</a>
-      <span class="price">2999,99 zł</span>
+      <span class="price">${product.newPrice} zł</span>
       </p>
       <p class="product">
       <a href="#">Przenośny zewnętrzny dysk SSD 1TB KINGSTON<br> XS1000R USB3.2 Red</a>
@@ -570,17 +653,17 @@ if (product) {
   <img src="./img_product_page/action-common-share-8f2e34e3c1.svg">
   <img src="./img_product_page/action-common-heart-322d64f02b.svg">
   </section>
-  <h1>Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD <br>120Hz Win11 Silver</h1>
+  <h1>${product.title}</h1>
   <p class="os">2 osoby kupiły ostatnio</p>
-  <img src="./img_product_page/ADYY_1_201811098627323.jpg" class="laptop" id="mainImage">
+  <img src="${product.img[0]}" class="laptop" id="mainImage">
 <section class="galeria">
-    <img src="./img_product_page/ADYY_1_201811098627323.jpg" class="mini">
-    <img src="./img_product_page/laptop1.webp" class="mini">
-    <img src="./img_product_page/laptop2.webp" class="mini">
-    <img src="./img_product_page/laptop3.webp" class="mini">
-    <img src="./img_product_page/laptop4.webp" class="mini">
-    <img src="./img_product_page/laptop2.webp" class="mini">
-    <img src="./img_product_page/laptop3.webp" class="mini">
+    <img src="${product.img[0]}" class="mini">
+    <img src="${product.img[1]}" class="mini">
+    <img src="${product.img[2]}" class="mini">
+    <img src="${product.img[3]}" class="mini">
+    <img src="${product.img[4]}" class="mini">
+    <img src="${product.img[5]}" class="mini">
+    <img src="${product.img[6]}" class="mini">
 </section>
 </section>
 
@@ -588,14 +671,14 @@ if (product) {
   <h2>Kup razem</h2>
   <section class="bundle">
     <section class="bundle-images">
-      <img src="./img_product_page/ADYY_1_201811098627323.jpg">
+      <img src="${product.img[0]}">
       <span class="plus">+</span>
-      <img src="./img_product_page/dysk.png">
+      <img src="${product.img[7]}">
     </section>
     <section class="bundle-info">
       <p class="product">
       <a href="#">Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD<br> 15,6" FHD 120Hz Win11 Silver</a>
-      <span class="price">2999,99 zł</span>
+      <span class="price">${product.newPrice} zł</span>
       </p>
       <p class="product">
       <a href="#">Przenośny zewnętrzny dysk SSD 1TB KINGSTON<br> XS1000R USB3.2 Red</a>
@@ -610,36 +693,36 @@ if (product) {
     <h2>Parametry</h2>
     <section class="product-info">
       <section class="row">
-      <span class="label">Stan</span>
-      <span class="value highlight">Nowy</span>
+      <span class="label">${product.description[0]}</span>
+      <span class="value highlight">${product.description[1]}</span>
       </section>
       <section class="row">
-      <span class="label">Faktura</span>
-      <span class="value">Wystawiam fakturę VAT</span>
+      <span class="label">${product.description[2]}</span>
+      <span class="value">${product.description[3]}</span>
       </section>
       <section class="row">
-      <span class="label">Marka</span>
-      <span class="value highlight">Dell</span>
+      <span class="label">${product.description[4]}</span>
+      <span class="value highlight">${product.description[5]}</span>
       </section>
       <section class="row">
-      <span class="label">Stan opakowania</span>
-      <span class="value">oryginalne</span>
+      <span class="label">${product.description[6]}</span>
+      <span class="value">${product.description[7]}</span>
       </section>
       <section class="row">
-      <span class="label">Model</span>
-      <span class="value">Inspiron 15 3520 i5 Silver Win11</span>
+      <span class="label">${product.description[8]}</span>
+      <span class="value">${product.description[9]}</span>
       </section>
       <section class="row">
-      <span class="label">Typ</span>
-      <span class="value">standardowy</span>
+      <span class="label">${product.description[10]}</span>
+      <span class="value">${product.description[11]}</span>
       </section>
       <seection class="row">
-      <span class="label">Układ klawiatury</span>
-      <span class="value">US international (qwerty)</span>
+      <span class="label">${product.description[12]}</span>
+      <span class="value">${product.description[13]}</span>
       </seection>
       <section class="row">
-      <span class="label">Kod producenta</span>
-      <span class="value">3520-9997</span>
+      <span class="label">${product.description[14]}</span>
+      <span class="value">${product.description[15]}</span>
       </section>
       <section class="full-width-line">
       <a href="#">WSZYSTKIE PARAMETRY</a>
@@ -652,94 +735,89 @@ if (product) {
   <h3>Notebook DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD W11</h3>
   <div class="product-container">
     <div class="product-text">
-        <h2>Dzisiejszy projekt przyszłości - DELL Inspiron 15 3520</h2>
+        <h2>${product.description2[0]}</h2>
         <p>
-        To urządzenie zapewnia wysoką wydajność i ciche działanie. Zostało wyposażone w wydajny procesor
-        i szybki dysk SSD PCIe. Korzystaj z dużych klawiszy i touchpada, które ułatwiają nawigację po treściach
-        i w oprogramowaniu ComfortView. To rozwiązanie z certyfikatem TUV Rheinland ograniczające emisję
-        szkodliwego niebieskiego światła. Dzięki temu możesz korzystać z urządzenia przez długi czas
-        bez nadwyrężania wzroku. Ponadto możesz korzystać z wyświetlacza FHD z elegancką, wąską obwódką
-        z trzech stron.
+        ${product.description2[1]}
         </p>
     </div>
     <div class="product-image">
-      <img src="./img_product_page/ADYY_1_201811098627323.jpg" >
+      <img src="${product.img[0]}" >
     </div>
 </div>
 <div class="product-container">
   <div class="product-text">
-      <h2 class="large">Microsoft Windows 11 Home</h2>
+      <h2 class="large">${product.description2[2]}</h2>
       <p>
-      System Windows 11 został zaprojektowany z myślą o intuicyjności, personalizacji i ogromnych możliwościach. Dzięki niemu łatwiej utrzymać porządek, sprawnie przełączać się między zadaniami i płynnie uruchamiać gry. Niezależnie od tego, co planujesz, znajdziesz funkcję lub narzędzie stworzone, by ułatwić codzienne działania i uczynić je jeszcze bardziej wyjątkowymi.
+      ${product.description2[3]}
       </p>
   </div>
   <div class="product-image">
-    <img src="./img_product_page/laptop1.webp"class="one" >
+    <img src="${product.img[1]}"class="one" >
   </div>
 </div>
 <div class="product-container">
 <div class="product-text">
-    <h2 class="large">Nowoczesny Design</h2>
+    <h2 class="large">${product.description2[4]}</h2>
     <p>
-    Dzięki wbudowanej kamerze zawsze będziesz wyglądać świetnie i czuć się pewnie. Twój komputer stacjonarny został zaprojektowany z myślą o codziennym użytkowaniu. Wyposażono go w małe gumowe nóżki oraz ochronne elementy zawiasu, które zapobiegają ślizganiu się i zapewniają większą stabilność na twardych powierzchniach.
+    ${product.description2[5]}
     </p>
 </div>
 <div class="product-image">
-  <img src="./img_product_page/laptop2.webp"class="one" >
+  <img src="${product.img[2]}"class="one" >
 </div>
 </div>
 <div class="product-container">
 <div class="product-text">
-    <h2 class="large">Procesor nowej generacji</h2>
-    <h2 class="large">Intel Core i5-1235U 10 rdzeni, 12 wątków, do 3.30 / 4.40 GHz, 12 MB</h2>
+    <h2 class="large">${product.description2[6]}</h2>
+    <h2 class="large">${product.description2[7]}</h2>
     <p>
-    Intel Core i5-1235U to 10-rdzeniowy procesor, który osiąga maksymalną częstotliwość taktowania do 4,4 GHz, co pozwala mu bez trudu poradzić sobie z wymagającymi zadaniami produktywności i równoczesnym przetwarzaniem wielu procesów. Doświadcz znacznego wzrostu wydajności i wyjątkowo płynnej pracy. Pracuj, twórz i edytuj w swoim tempie dzięki szybkiemu procesorowi Intel.
+    ${product.description2[8]}
     </p>
 </div>
 <div class="product-image">
-  <img src="./img_product_page/laptop3.webp"class="two" >
+  <img src="${product.img[3]}"class="two" >
 </div>
 </div>
 <div class="product-container">
 <div class="product-text">
-    <h2 class="large">Niesamowity dźwięk</h2>
+    <h2 class="large">${product.description2[9]}</h2>
     <p>
-    Będziesz pewny, że Twoje słowa będą doskonale słyszalne, dzięki dwóm wbudowanym mikrofonom z technologią sztucznej inteligencji, która skutecznie redukuje hałas tła. Dodatkowo głośniki z funkcją Waves MaxxAudio® Pro gwarantują wyraźny dźwięk i odpowiednią głośność, dzięki czemu każde słowo będzie brzmiało czysto i wyraźnie.
+    ${product.description2[10]}
     </p>
 </div>
 <div class="product-image">
-  <img src="./img_product_page/laptop4.webp"class="one" >
+  <img src="${product.img[4]}"class="one" >
 </div>
 </div>
 
 <div class="product-container">
 <div class="product-text">
-  <h2 class="xlarge">Specyfikacja</h2>
-  <li><strong>Procesor:</strong> Intel Core i5-1235U (10 rdzeni, 12 wątków, 3.30-4.40 GHz, 12MB cache)</li>
-  <li><strong>Pamięć:</strong> RAM 32 GB (DDR4, 2666 MHz)</li>
-  <li><strong>Pojemność dysku SSD:</strong> 1 TB</li>
-  <li><strong>Karta graficzna:</strong> Intel Iris Xe Graphics</li>
-  <li><strong>Typ ekranu:</strong> Matowy, LED, WVA</li>
-  <li><strong>Przekątna ekranu:</strong> 15,6"</li>
-  <li><strong>Rozdzielczość ekranu:</strong> 1920 x 1080 (Full HD)</li>
-  <li><strong>Dźwięk:</strong> Wbudowane głośniki stereo, Wbudowany mikrofon</li>
-  <li><strong>Złącza:</strong> USB 2.0 - 1 szt., USB 3.2 Gen. 1 - 2 szt., USB 3.2 Gen. 1 - 2 szt., HDMI 1.4 - 1 szt., DC-in (wejście zasilania) - 1 szt.</li>
-  <li><strong>Podświetlana klawiatura:</strong> Nie</li>
-  <li><strong>Pojemność baterii:</strong> 3-komorowa, 3467 mAh</li>
-  <li><strong>System operacyjny:</strong> Microsoft Windows 11 Home</li>
-  <li><strong>Łączność:</strong> Wi-Fi 6, Moduł Bluetooth 5.2</li>
+  <h2 class="xlarge">Dane techniczne</h2>
+  <li><strong>${product.description3[0]}</strong>${product.description3[1]}</li>
+  <li><strong>${product.description3[2]}</strong>${product.description3[3]}</li>
+  <li><strong>${product.description3[4]}</strong>${product.description3[5]}</li>
+  <li><strong>${product.description3[6]}</strong>${product.description3[7]}</li>
+  <li><strong>${product.description3[8]}</strong>${product.description3[9]}</li>
+  <li><strong>${product.description3[10]}</strong>${product.description3[11]}</li>
+  <li><strong>${product.description3[12]}</strong>${product.description3[13]}</li>
+  <li><strong>${product.description3[14]}</strong>${product.description3[15]}</li>
+  <li><strong>${product.description3[16]}</strong>${product.description3[17]}</li>
+  <li><strong>${product.description3[18]}</strong>${product.description3[19]}</li>
+  <li><strong>${product.description3[20]}</strong>${product.description3[21]}</li>
+  <li><strong>${product.description3[22]}</strong>${product.description3[23]}</li>
+  <li><strong>${product.description3[24]}</strong>${product.description3[25]}</li>
 </div>
 <div class="product-image">
-  <img src="./img_product_page/dell.png"class="dell" >
+  <img src="${product.img[8]}"class="dell" >
 </div>
 </div>
 <div class="images">
-<img src="./img_product_page/ADYY_1_201811098627323.jpg" >
-<img src="./img_product_page/laptop2.webp" >
+<img src="${product.img[0]}" >
+<img src="${product.img[2]}" >
 </div>
 <div class="images">
-<img src="./img_product_page/laptop1.webp" >
-<img src="./img_product_page/laptop3.webp" >
+<img src="${product.img[1]}" >
+<img src="${product.img[3]}" >
 </div>
 </section>
 </section>
@@ -864,5 +942,12 @@ if (product) {
 <section class="footer-section" id="footer-container"></section>  
   `;
   }};
-  
+  const miniImages = document.querySelectorAll('.galeria .mini');
+  const mainImage = document.getElementById('mainImage');
+
+  miniImages.forEach(function (miniImage) {
+      miniImage.addEventListener('click', function () {
+          mainImage.src = miniImage.src;
+      });
+  });
 });
