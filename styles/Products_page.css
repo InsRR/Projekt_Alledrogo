@@ -59,9 +59,6 @@ li {
   color: #333;
   margin:0 0 0 30px;
 }
-strong {
-  color: #000;
-}
 .product-text {
   flex: 1;
   padding-right: 20px;
@@ -143,14 +140,12 @@ h3{
       .label {
         font-weight: 400;
         font-size: 14px;
-        color: #666;
         width: 250px;
         flex-shrink: 0;
       }
       .value {
         font-weight: 400;
         font-size: 14px;
-        color: #333;
       }
       .highlight {
         color: teal;
@@ -192,20 +187,18 @@ h2{
         justify-content: space-between;
         align-items: center;
         a {
-          color: #000;
+          color: var(--product-info-text-color-light);
           text-decoration: none;
           font-size: 16px;
           flex-grow: 1;
         }
         .price {
           font-size: 12px;
-          color: #333;
           margin: -17px 0 0 50px;
         }
       }
       .total-price {
         font-size: 15px;
-        color: #333;
         text-align: right;
 
         .big{

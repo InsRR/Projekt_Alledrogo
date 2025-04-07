@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             img: './img/iphone.jpg',
             title: 'Telefon iPhone 15',
             oldPrice: '2699,00 zł',
-            newPrice: '2199,99 zł',
+            newPrice: '2299,99 zł',
             stock: 3,
             description: 'Telefon iPhone 15 alalallalalalalallalalalalaalllallalalaaaaaaaaaaaaaaaaaaaaaaaaaa',
             payImg: './img/pay.png'

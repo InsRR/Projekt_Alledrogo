@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-
-
-
 const params = new URLSearchParams(window.location.search);
 const productID = params.get('productID');
 
-// Lista produktów (lub załaduj z zewnętrznego źródła)
 const products = [
     {
         productID: 'P001',
@@ -15,6 +11,8 @@ const products = [
         Price: ['2999,','99 zł'],
         newPrice: '2999,99 zł',
         Addons: '316,16 zł',
+        Sprice: ['3316,','15 zł'],
+        AddonsDescription: ['Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD <br> 15,6" FHD 120Hz Win11 Silver','Przenośny zewnętrzny dysk SSD 1TB KINGSTON <br> XS1000R USB3.2 Red'],
         link:['Allegro','Elektronika','Komputery','Laptopy','Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD...'],
         stock: 10,
         description: ["Stan" , "Nowy","Faktura","Wystawiam fakturę VAT","Marka","Dell","Stan opakowania","oryginalne","Model","Inspiron 15 3520 i5 Silver Win11","Typ","standardowy","Układ klawiatury","US international (qwerty)","Kod producenta","3520-9997"],
@@ -55,14 +53,16 @@ const products = [
     {
         productID: 'P002',
         category: 'Elektronika',
-        img: ['./img_product_page/ps5.webp','./img_product_page/ps51.png','./img_product_page/ps52.png','./img_product_page/pad.png','./img_product_page/ps54.png','./img_product_page/ps52.png','./img_product_page/ps51.png',],
+        img: ['./img_product_page/ps5.webp','./img_product_page/ps51.png','./img_product_page/ps52.png','./img_product_page/pad.png','./img_product_page/ps54.png','./img_product_page/ps52.png','./img_product_page/ps51.png','./img_product_page/sony-lego-horizon-adventure-gra-na-ps5,150919824409_7.webp',''],
         title: 'Konsola Sony PlayStation 5 Pro 2TB PS5 Digital Bez Napędu',
         Price: ['2199,','99 zł'],
         newPrice: '2199,99 zł',
         Addons: '279,99 zł',
+        Sprice: ['2479,','98 zł'],
+        AddonsDescription: ['Konsola Sony PlayStation 5 Pro 2TB <br>PS5 Digital Bez Napędu','Klucz wirtualny do gry <br>LEGO Horizon Adventure'],
         link:['Allegro','Elektronika','Konsole i automaty','Sony PlayStation 5 (PS5)','Konsola PlayStation 5 Pro'],
         stock: 5,
-        description: ["Stan", "Nowy","Faktura", "Wystawiam fakturę VAT","Waga produktu z opakowaniem jednostkowym", "5.035 kg","EAN (GTIN)", "0711719577478","Kod producenta", "CFI-2016","Wersja", "PlayStation 5 Pro","Informacje o bezpieczeństwie", "CE"],
+        description: ["Stan", "Nowy","Faktura", "Wystawiam fakturę VAT","Waga produktu z opakowaniem jednostkowym", "5.035 kg","EAN (GTIN)", "0711719577478","Kod producenta", "CFI-2016","Wersja", "PlayStation 5 Pro","Informacje o bezpieczeństwie", "CE",'',''],
         description2: [
           "2 TB pamięci masowej", 
           "Dzięki 2 TB pamięci SSD możesz błyskawicznie zacząć grać w swoje ulubione gry. Konsola Sony PlayStation 5 Pro jest wyposażona w ulepszony procesor graficzny, który ma aż o 67% więcej jednostek obliczeniowych niż standardowy model PS5 oraz o 28% szybszą pamięć.Dzięki temu możesz cieszyć się jeszcze płynniejszą rozgrywką w rozdzielczości 4K przy wyższej liczbie klatek na sekundę, a także krótszymi czasami ładowania. Dodatkowo, zaawansowany system chłodzenia zapewnia stabilną wydajność nawet podczas najbardziej wymagających sesji gamingowych.",
@@ -73,7 +73,7 @@ const products = [
           "PS5 ProGame Boost i wsteczna kompatybilność.",
           "Na konsoli PS5 Pro można grać w ponad 8500 gier na PS4™. Dzięki funkcji Game Boost w wersji na PS5 Pro będziesz cieszyć się większą, bardziej płynną szybkością klatek w niektórych z najlepszych gier na konsole PS4 i PS5.",
           
-          "Kontroler bezprzewodowy DualSense", 
+          "Kontroler bezprzewodowy DualSense",'', 
           "Wykorzystaj moc PS5 Pro dzięki niesamowitym funkcjom dotykowym innowacyjnego kontrolera bezprzewodowego DualSense. Grając za pomocą kontrolera bezprzewodowego DualSense, możesz korzystać z efektów dotykowych w wybranych grach na PS5. Poznaj możliwości adaptacyjnych efektów „Trigger” w wybranych tytułach na PS5. Dzięki precyzyjnym efektom dotykowym poczujesz każdy ruch, wstrząs i napięcie, co sprawi, że rozgrywka stanie się jeszcze bardziej immersyjna. Dodatkowo, wbudowany mikrofon i głośnik w kontrolerze DualSense pozwolą Ci lepiej komunikować się z drużyną oraz doświadczyć dźwięku w zupełnie nowy sposób.",
           
           "Stworzone z myślą o błyskawicznej prędkości", 
@@ -89,18 +89,20 @@ const products = [
           "Bluetooth:", "tak",
           "Pamięć:", "2 TB",
           "Złącza:", "Wyjście wideo - Port HDMI OUT, wsparcie telewizorów 4K 120 Hz, telewizorów 8K, VRR (obsługiwane przez HDMI 2.1). Dźwięk - „Tempest” 3D AudioTech",
-          "Gry w zestawie:", "Astro's Playroom"
+          "Gry w zestawie:", "Astro's Playroom",'Napęd optyczny:','4K UHD Blu-ray','Moc obliczeniowa:','10,28 TFLOPS','Rozszerzenie pamięci na dane:','Slot NVME SSD'
         ]
         
     },
     {
         productID: 'P003',
         category: 'Elektronika',
-        img: ['./img_product_page/Smartfon-APPLE-iPhone-15-128GB-5G-6.1-Niebieski-front-tyl.jpg','./img_product_page/ip15.jpg','./img_product_page/ip152.jpg','./img_product_page/ip153.jpg','./img_product_page/ip154.jpg','./img_product_page/ip15.jpg','./img_product_page/ip152.jpg','./img_product_page/Apple-Beats-Studio-Buds-douszne-sluchawki-bezprzewodowe-z-redukcja-halasu-biale-22605-680x680.webp'],
+        img: ['./img_product_page/Smartfon-APPLE-iPhone-15-128GB-5G-6.1-Niebieski-front-tyl.jpg','./img_product_page/ip15.jpg','./img_product_page/ip152.jpg','./img_product_page/ip153.jpg','./img_product_page/ip154.jpg','./img_product_page/ip15.jpg','./img_product_page/ip152.jpg','./img_product_page/Apple-Beats-Studio-Buds-douszne-sluchawki-bezprzewodowe-z-redukcja-halasu-biale-22605-680x680.webp',''],
         title: 'Smartfon Apple iPhone 15 128 GB 5G Blue',
         Price: ['2299,','99 zł'],
         newPrice: '2299,99 zł',
-        Addons: '279,99 zł',
+        Addons: '649,00 zł',
+        Sprice: ['2948,','99 zł'],
+        AddonsDescription: ['Smartfon Apple iPhone 15 <br> 128 GB 5G Blue','Apple Beats Studio Buds douszne słuchawki <br> bezprzewodowe z redukcją hałasu - białe'],
         link: ['Allegro','Elektronika','Telefony i Akcesoria','Smartfony i telefony kamórkowe','Smartfon Apple iPhone 15 128 GB 5G niebieski'],
         stock: 3,
         description: ["Stan", "Nowy","Faktura", "Wystawiam fakturę VAT","Marka telefonu", "Apple","Model telefonu", "iPhone 15","Kod producenta", "MTP43SX/A","Typ", "Smartfon","EAN (GTIN)", "0195949036521","Kolor", "niebieski"],
@@ -114,7 +116,7 @@ const products = [
           "Photonic Engine. Fantastyczne fotki.",
           "Nowy Photonic Engine sprawia, że portrety wyglądają jeszcze lepiej. Wykorzystuje najwyższej jakości piksele z ultrawysokiej rozdzielczości i łączy je ze zdjęciem zoptymalizowanym pod kątem światła. Efektem jest obraz o rozdzielczości 24 MP – dwa razy większej niż standardowo, a jednocześnie w pliku na tyle kompaktowym, że bez problemu go przechowasz i udostępnisz. Idealne rozwiązanie na codzienne fotografowanie.",
           
-          "Czip A16 Bionic. Megamoc Pro.",
+          "Czip A16 Bionic. Megamoc Pro.",'',
           "Czip A16 Bionic napędza przeróżne zaawansowane rozwiązania. To dzięki niemu możesz robić zdjęcia 24 MP i jeszcze lepsze portrety z artystycznym rozmyciem tła. Jego moc odpowiada też za izolowanie głosu podczas połączeń telefonicznych, co sprawia, że rozmowy są jeszcze wyraźniejsze, oraz za niezwykłą płynność gier o intensywnej grafice. Wszystko to działa z wyjątkową energooszczędnością, co przekłada się na dłuższy czas pracy na baterii – nawet przy wymagających zadaniach. Do tego dochodzi błyskawiczne przetwarzanie danych i większa responsywność systemu, dzięki czemu codzienne korzystanie z iPhone’a jest jeszcze płynniejsze. Wiadomo dlaczego: A16 Bionic zaczynał karierę od modeli Pro i teraz wnosi najwyższą wydajność do Twoich rąk.",
           
           "USB-C. Kompatybilność.",
@@ -130,7 +132,7 @@ const products = [
           "Wersja systemu:", "iOS 17",
           "NFC:", "Tak",
           "5G:", "Tak",
-          "Kolor obudowy:", "Niebieski"
+          "Kolor obudowy:", "Niebieski",'Gwarancja:','12 miesięcy','Ładowarka w zestawie:','Nie','Funkcje dodatkowe:','Barometr, Czujnik światła, Czujnik zbliżeniowy, Face ID, Przyspieszeniomierz, Żyroskop'
         ]
         
     }
@@ -272,14 +274,14 @@ if (product) {
     </section>
     <section class="bundle-info">
       <p class="productx">
-      <a href="#">Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD<br> 15,6" FHD 120Hz Win11 Silver</a>
+      <a href="#">${product.AddonsDescription[0]}</a>
       <span class="price">${product.newPrice} zł</span>
       </p>
       <p class="productx">
-      <a href="#">Przenośny zewnętrzny dysk SSD 1TB KINGSTON<br> XS1000R USB3.2 Red</a>
+      <a href="#">${product.AddonsDescription[1]}</a>
       <span class="price">${product.Addons}</span>
       </p>
-      <p class="total-price">cena razem <span class=big>3316,</span><span class=small>15 zł</span></p>
+      <p class="total-price">cena razem <span class=big>${product.Sprice[0]}</span><span class=small>${product.Sprice[1]}</span></p>
       <button class="add-to-cart">DODAJ ZESTAW DO KOSZYKA</button>
     </section>
   </section>
@@ -668,14 +670,14 @@ if (product) {
     </section>
     <section class="bundle-info">
       <p class="productx">
-      <a href="#">Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD<br> 15,6" FHD 120Hz Win11 Silver</a>
+      <a href="#">${product.AddonsDescription[0]}</a>
       <span class="price">${product.newPrice} zł</span>
       </p>
       <p class="productx">
-      <a href="#">Przenośny zewnętrzny dysk SSD 1TB KINGSTON<br> XS1000R USB3.2 Red</a>
+      <a href="#">${product.AddonsDescription[1]}</a>
       <span class="price">${product.Addons}</span>
       </p>
-      <p class="total-price">cena razem <span class=big>3316,</span><span class=small>15 zł</span></p>
+      <p class="total-price">cena razem <span class=big>${product.Sprice[0]}</span><span class=small>${product.Sprice[1]}</span></p>
       <button class="add-to-cart">DODAJ ZESTAW DO KOSZYKA</button>
     </section>
   </section>
@@ -933,6 +935,7 @@ if (product) {
 <section class="footer-section" id="footer-container"></section>  
   `;
   }};
+  console.log(product.AddonsDescription[0]);
   const miniImages = document.querySelectorAll('.galeria .mini');
   const mainImage = document.getElementById('mainImage');
 

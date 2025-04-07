@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const images = ["./img/bannerphoto.png", "./img/bannerphoto2.png", "./img/bannerphoto3.png"];
+    const images = ["./img/bannerphoto.png", "./img/bannerphoto2.jpg", "./img/bannerphoto3.png"];
     let currentIndex = 0;
     const dots = document.querySelectorAll('.dot');
     const imageElement = document.getElementById("imagebanner");
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (savedTheme === 'dark') {
                 icon.src = icon.getAttribute('data-dark');
             } else {
-                con.src = icon.getAttribute('data-light');
+                icon.src = icon.getAttribute('data-light');
             }
         });
 

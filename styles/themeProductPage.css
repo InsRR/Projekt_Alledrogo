@@ -39,7 +39,6 @@ body.dark .footer-title, body.dark .title-question {
 }
 
 .price {
-    color: var(--price-color-light);
     font-family: var(--font-family-inter);
     font-size: 1.25rem;
     font-weight: 500;
@@ -269,7 +268,10 @@ body.dark .smart {
 }
 
 body.dark li {
-    color: var(--text-dark);
+    color: var(--product-info-text-color-dark);
+}
+body.dark li strong {
+    color: white;
 }
 
 body.dark .toptop a{
@@ -300,7 +302,70 @@ body.light .second-inspiration {
     background-color: var(--background-light);
 }
 
+body.dark .product-info .label {
+    color: var(--product-info-text-color-dark);
+}
 
+body.dark .product-info .value {
+    color: var(--text-dark);
+}
+
+body.light .product-info .label {
+    color: var(--product-info-text-color-light);
+}
+
+body.light .product-info .value {
+    color: var(--text-light);
+}
+body.light .product-info .row{
+    background-color: var(--product-info-color-light-1);
+    &:nth-child(even) {
+        background-color: var(--product-info-color-light-2);
+  }
+}
+
+body.dark .product-info .row{
+    background-color: var(--product-info-color-dark-1);
+    &:nth-child(even) {
+        background-color: var(--product-info-color-dark-2);
+  }
+}
+
+body.dark .bundle-info .total-price{
+    color: var(--product-price-color-dark);
+}
+
+body.dark .bundle-info .productx .price{
+    color: var(--product-price-color-dark);
+}
+
+body.light .bundle-info .productx .price{
+    color: var(--product-price-color-light);
+}
+
+body.dark .bundle-info .productx a{
+    color: var(--product-info-text-color-dark);
+}
+
+body.light .bundle-info .productx a{
+    color: var(--product-info-text-color-light);
+}
+
+body.dark .product-text p{
+    color: var(--product-info-text-color-dark);
+}
+
+body.dark .right-box .qwi p{
+    color: var(--product-price-color-dark);
+}
+
+body.dark .right-box .qwe p{
+    color: var(--product-price-color-dark);
+}
+
+body.dark .right-box .cena{
+    color: var(--product-price-color-dark);
+}
 @media screen and (max-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1.5) {
 
