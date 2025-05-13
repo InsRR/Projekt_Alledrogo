@@ -144,7 +144,7 @@ if (product) {
     const isMobile = window.innerWidth <= 450;
     if (isMobile) {
       document.getElementById('product-container').innerHTML =  `
-<!-- Header Section -->
+      <!-- Phone Section -->
 <section class="header">
   <div class="up-section">
       <div class="in-section">
@@ -235,11 +235,11 @@ if (product) {
 </section>
 
 <section class="toptop ">
-<a href="#">${product.link[0]}</a><span class="separator"> / </span>
-<a href="#">${product.link[1]}</a><span class="separator"> / </span>
-<a href="#">${product.link[2]}</a><span class="separator"> / </span>
-<a href="#">${product.link[3]}</a><span class="separator"> / </span>
-<a href="#" class="current">${product.link[4]}</a>
+<a href="#">Allegro</a><span class="separator"> / </span>
+<a href="#">Elektronika</a><span class="separator"> / </span>
+<a href="#">Komputery</a><span class="separator"> / </span>
+<a href="#">Laptopy</a><span class="separator"> / </span>
+<a href="#" class="current">Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD...</a>
 </section>
 
 <main class="container">
@@ -250,172 +250,17 @@ if (product) {
   <img src="./img_product_page/action-common-share-8f2e34e3c1.svg">
   <img src="./img_product_page/action-common-heart-322d64f02b.svg">
   </section>
-  <h1>${product.title}</h1>
+  <h1>Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD <br>120Hz Win11 Silver</h1>
   <p class="os">2 osoby kupiły ostatnio</p>
-  <img src="${product.img[0]}" class="laptop" id="mainImage">
+  <img src="./img_product_page/ADYY_1_201811098627323.jpg" class="laptop" id="mainImage">
 <section class="galeria">
-    <img src="${product.img[0]}" class="mini">
-    <img src="${product.img[1]}" class="mini">
-    <img src="${product.img[2]}" class="mini">
-    <img src="${product.img[3]}" class="mini">
-    <img src="${product.img[4]}" class="mini">
-    <img src="${product.img[5]}" class="mini">
-    <img src="${product.img[6]}" class="mini">
-</section>
-</section>
-
-<section class="left-box ">
-  <h2>Kup razem</h2>
-  <section class="bundle">
-    <section class="bundle-images">
-      <img src="${product.img[0]}">
-      <span class="plus">+</span>
-      <img src="${product.img[7]}">
-    </section>
-    <section class="bundle-info">
-      <p class="productx">
-      <a href="#">${product.AddonsDescription[0]}</a>
-      <span class="price">${product.newPrice} zł</span>
-      </p>
-      <p class="productx">
-      <a href="#">${product.AddonsDescription[1]}</a>
-      <span class="price">${product.Addons}</span>
-      </p>
-      <p class="total-price">cena razem <span class=big>${product.Sprice[0]}</span><span class=small>${product.Sprice[1]}</span></p>
-      <button class="add-to-cart">DODAJ ZESTAW DO KOSZYKA</button>
-    </section>
-  </section>
-</section>
-<section class="left-box ">
-    <h2>Parametry</h2>
-    <section class="product-info">
-      <section class="row">
-      <span class="label">${product.description[0]}</span>
-      <span class="value highlight">${product.description[1]}</span>
-      </section>
-      <section class="row">
-      <span class="label">${product.description[2]}</span>
-      <span class="value">${product.description[3]}</span>
-      </section>
-      <section class="row">
-      <span class="label">${product.description[4]}</span>
-      <span class="value highlight">${product.description[5]}</span>
-      </section>
-      <section class="row">
-      <span class="label">${product.description[6]}</span>
-      <span class="value">${product.description[7]}</span>
-      </section>
-      <section class="row">
-      <span class="label">${product.description[8]}</span>
-      <span class="value">${product.description[9]}</span>
-      </section>
-      <section class="row">
-      <span class="label">${product.description[10]}</span>
-      <span class="value">${product.description[11]}</span>
-      </section>
-      <seection class="row">
-      <span class="label">${product.description[12]}</span>
-      <span class="value">${product.description[13]}</span>
-      </seection>
-      <section class="row">
-      <span class="label">${product.description[14]}</span>
-      <span class="value">${product.description[15]}</span>
-      </section>
-      <section class="full-width-line">
-      <a href="#">WSZYSTKIE PARAMETRY</a>
-      </section>
-    </section>
-</section>
-
-<section class="left-box ">
-  <h2>Opis</h2>
-  <h3>Notebook DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD W11</h3>
-  <div class="product-container">
-    <div class="product-text">
-        <h2>${product.description2[0]}</h2>
-        <p>
-        ${product.description2[1]}
-        </p>
-    </div>
-    <div class="product-image">
-      <img src="${product.img[0]}" >
-    </div>
-</div>
-<div class="product-container">
-  <div class="product-text">
-      <h2 class="large">${product.description2[2]}</h2>
-      <p>
-      ${product.description2[3]}
-      </p>
-  </div>
-  <div class="product-image">
-    <img src="${product.img[1]}"class="one" >
-  </div>
-</div>
-<div class="product-container">
-<div class="product-text">
-    <h2 class="large">${product.description2[4]}</h2>
-    <p>
-    ${product.description2[5]}
-    </p>
-</div>
-<div class="product-image">
-  <img src="${product.img[2]}"class="one" >
-</div>
-</div>
-<div class="product-container">
-<div class="product-text">
-    <h2 class="large">${product.description2[6]}</h2>
-    <h2 class="large">${product.description2[7]}</h2>
-    <p>
-    ${product.description2[8]}
-    </p>
-</div>
-<div class="product-image">
-  <img src="${product.img[3]}"class="two" >
-</div>
-</div>
-<div class="product-container">
-<div class="product-text">
-    <h2 class="large">${product.description2[9]}</h2>
-    <p>
-    ${product.description2[10]}
-    </p>
-</div>
-<div class="product-image">
-  <img src="${product.img[4]}"class="one" >
-</div>
-</div>
-
-<div class="product-container">
-<div class="product-text">
-  <h2 class="xlarge">Dane techniczne</h2>
-  <li><strong>${product.description3[0]}</strong>${product.description3[1]}</li>
-  <li><strong>${product.description3[2]}</strong>${product.description3[3]}</li>
-  <li><strong>${product.description3[4]}</strong>${product.description3[5]}</li>
-  <li><strong>${product.description3[6]}</strong>${product.description3[7]}</li>
-  <li><strong>${product.description3[8]}</strong>${product.description3[9]}</li>
-  <li><strong>${product.description3[10]}</strong>${product.description3[11]}</li>
-  <li><strong>${product.description3[12]}</strong>${product.description3[13]}</li>
-  <li><strong>${product.description3[14]}</strong>${product.description3[15]}</li>
-  <li><strong>${product.description3[16]}</strong>${product.description3[17]}</li>
-  <li><strong>${product.description3[18]}</strong>${product.description3[19]}</li>
-  <li><strong>${product.description3[20]}</strong>${product.description3[21]}</li>
-  <li><strong>${product.description3[22]}</strong>${product.description3[23]}</li>
-  <li><strong>${product.description3[24]}</strong>${product.description3[25]}</li>
-</div>
-<div class="product-image">
-  <img src="${product.img[8]}"class="dell" >
-</div>
-</div>
-<div class="images">
-<img src="${product.img[0]}" >
-<img src="${product.img[2]}" >
-</div>
-<div class="images">
-<img src="${product.img[1]}" >
-<img src="${product.img[3]}" >
-</div>
+    <img src="./img_product_page/ADYY_1_201811098627323.jpg" class="mini">
+    <img src="./img_product_page/laptop1.webp" class="mini">
+    <img src="./img_product_page/laptop2.webp" class="mini">
+    <img src="./img_product_page/laptop3.webp" class="mini">
+    <img src="./img_product_page/laptop4.webp" class="mini">
+    <img src="./img_product_page/laptop2.webp" class="mini">
+    <img src="./img_product_page/laptop3.webp" class="mini">
 </section>
 </section>
 
@@ -432,7 +277,7 @@ if (product) {
     <hr class="full">
     <p class="super">SUPERCENA</p>
     <section class="cena">
-    <p>${product.Price[0]}<span class="zl">${product.Price[1]}</span></p>
+    <p>2999,<span class="zl">99 zł</span></p>
     <img src="./img_product_page/smart 1.svg">
   </section>
   <section class="check ">
@@ -490,7 +335,7 @@ if (product) {
   <p class="inne">Laptop Dell Inspiron 15 3520 i5 Silver Win11 15,6 " <br>Intel Core i5 32 GB / 1000 GB srebrny</p>
   <p class="nn">NAJTAŃSZE - NOWE</p>
   <section class="cenasm">
-    <p>${product.Price[0]}<span class="zl">${product.Price[1]}</span></p>
+    <p>2999,<span class="zl">99 zł</span></p>
     <img src="./img_product_page/smart 1.svg">
     <img src="./img_product_page/arrow.png"class="arrow">
   </section>
@@ -498,7 +343,7 @@ if (product) {
   <hr>
   <p class="nn">NAJSZYBCIEJ</p>
   <section class="cenasm">
-    <p>${product.Price[0]}<span class="zl">${product.Price[1]}</span></p>
+    <p>2999,<span class="zl">99 zł</span></p>
     <img src="./img_product_page/smart 1.svg">
     <img src="./img_product_page/arrow.png"class="arrow">
   </section>
@@ -531,12 +376,183 @@ if (product) {
 </section>
 </section>
 </section>
-</main>
-<section class="buttons">
+
+<section class="left-box ">
+  <h2>Kup razem</h2>
+  <section class="bundle">
+    <section class="bundle-images">
+      <img src="./img_product_page/ADYY_1_201811098627323.jpg">
+      <span class="plus">+</span>
+      <img src="./img_product_page/dysk.png">
+    </section>
+    <section class="bundle-info">
+      <p class="product">
+      <a href="#">Laptop DELL Inspiron 15 i5-1235U 32GB 1TB-SSD<br> 15,6" FHD 120Hz Win11 Silver</a>
+      <span class="price">2999,99 zł</span>
+      </p>
+      <p class="product">
+      <a href="#">Przenośny zewnętrzny dysk SSD 1TB KINGSTON<br> XS1000R USB3.2 Red</a>
+      <span class="price">316,16 zł</span>
+      </p>
+      <p class="total-price">cena razem <span class=big>3316,</span><span class=small>15 zł</span></p>
+      <button class="add-to-cart">DODAJ ZESTAW DO KOSZYKA</button>
+    </section>
+  </section>
+</section>
+<section class="left-box ">
+    <h2>Parametry</h2>
+    <section class="product-info">
+      <section class="row">
+      <span class="label">Stan</span>
+      <span class="value highlight">Nowy</span>
+      </section>
+      <section class="row">
+      <span class="label">Faktura</span>
+      <span class="value">Wystawiam fakturę VAT</span>
+      </section>
+      <section class="row">
+      <span class="label">Marka</span>
+      <span class="value highlight">Dell</span>
+      </section>
+      <section class="row">
+      <span class="label">Stan opakowania</span>
+      <span class="value">oryginalne</span>
+      </section>
+      <section class="row">
+      <span class="label">Model</span>
+      <span class="value">Inspiron 15 3520 i5 Silver Win11</span>
+      </section>
+      <section class="row">
+      <span class="label">Typ</span>
+      <span class="value">standardowy</span>
+      </section>
+      <seection class="row">
+      <span class="label">Układ klawiatury</span>
+      <span class="value">US international (qwerty)</span>
+      </seection>
+      <section class="row">
+      <span class="label">Kod producenta</span>
+      <span class="value">3520-9997</span>
+      </section>
+      <section class="full-width-line">
+      <a href="#">WSZYSTKIE PARAMETRY</a>
+      </section>
+    </section>
+</section>
+
+<section class="left-box ">
+  <h2>Opis</h2>
+  <h3>Notebook DELL Inspiron 15 i5-1235U 32GB 1TB-SSD 15,6" FHD W11</h3>
+  <div class="product-container">
+    <div class="product-text">
+        <h2>Dzisiejszy projekt przyszłości - DELL Inspiron 15 3520</h2>
+        <p>
+        To urządzenie zapewnia wysoką wydajność i ciche działanie. Zostało wyposażone w wydajny procesor
+        i szybki dysk SSD PCIe. Korzystaj z dużych klawiszy i touchpada, które ułatwiają nawigację po treściach
+        i w oprogramowaniu ComfortView. To rozwiązanie z certyfikatem TUV Rheinland ograniczające emisję
+        szkodliwego niebieskiego światła. Dzięki temu możesz korzystać z urządzenia przez długi czas
+        bez nadwyrężania wzroku. Ponadto możesz korzystać z wyświetlacza FHD z elegancką, wąską obwódką
+        z trzech stron.
+        </p>
+    </div>
+    <div class="product-image">
+      <img src="./img_product_page/ADYY_1_201811098627323.jpg" >
+    </div>
+</div>
+<div class="product-container">
+  <div class="product-text">
+      <h2 class="large">Microsoft Windows 11 Home</h2>
+      <p>
+      System Windows 11 został zaprojektowany z myślą o intuicyjności, personalizacji i ogromnych możliwościach. Dzięki niemu łatwiej utrzymać porządek, sprawnie przełączać się między zadaniami i płynnie uruchamiać gry. Niezależnie od tego, co planujesz, znajdziesz funkcję lub narzędzie stworzone, by ułatwić codzienne działania i uczynić je jeszcze bardziej wyjątkowymi.
+      </p>
+  </div>
+  <div class="product-image">
+    <img src="./img_product_page/laptop1.webp"class="one" >
+  </div>
+</div>
+<div class="product-container">
+<div class="product-text">
+    <h2 class="large">Nowoczesny Design</h2>
+    <p>
+    Dzięki wbudowanej kamerze zawsze będziesz wyglądać świetnie i czuć się pewnie. Twój komputer stacjonarny został zaprojektowany z myślą o codziennym użytkowaniu. Wyposażono go w małe gumowe nóżki oraz ochronne elementy zawiasu, które zapobiegają ślizganiu się i zapewniają większą stabilność na twardych powierzchniach.
+    </p>
+</div>
+<div class="product-image">
+  <img src="./img_product_page/laptop2.webp"class="one" >
+</div>
+</div>
+<div class="product-container">
+<div class="product-text">
+    <h2 class="large">Procesor nowej generacji</h2>
+    <h2 class="large">Intel Core i5-1235U 10 rdzeni, 12 wątków, do 3.30 / 4.40 GHz, 12 MB</h2>
+    <p>
+    Intel Core i5-1235U to 10-rdzeniowy procesor, który osiąga maksymalną częstotliwość taktowania do 4,4 GHz, co pozwala mu bez trudu poradzić sobie z wymagającymi zadaniami produktywności i równoczesnym przetwarzaniem wielu procesów. Doświadcz znacznego wzrostu wydajności i wyjątkowo płynnej pracy. Pracuj, twórz i edytuj w swoim tempie dzięki szybkiemu procesorowi Intel.
+    </p>
+</div>
+<div class="product-image">
+  <img src="./img_product_page/laptop3.webp"class="two" >
+</div>
+</div>
+<div class="product-container">
+<div class="product-text">
+    <h2 class="large">Niesamowity dźwięk</h2>
+    <p>
+    Będziesz pewny, że Twoje słowa będą doskonale słyszalne, dzięki dwóm wbudowanym mikrofonom z technologią sztucznej inteligencji, która skutecznie redukuje hałas tła. Dodatkowo głośniki z funkcją Waves MaxxAudio® Pro gwarantują wyraźny dźwięk i odpowiednią głośność, dzięki czemu każde słowo będzie brzmiało czysto i wyraźnie.
+    </p>
+</div>
+<div class="product-image">
+  <img src="./img_product_page/laptop4.webp"class="one" >
+</div>
+</div>
+
+<div class="product-container">
+<div class="product-text">
+  <h2 class="xlarge">Specyfikacja</h2>
+  <li><strong>Procesor:</strong> Intel Core i5-1235U (10 rdzeni, 12 wątków, 3.30-4.40 GHz, 12MB cache)</li>
+  <li><strong>Pamięć:</strong> RAM 32 GB (DDR4, 2666 MHz)</li>
+  <li><strong>Pojemność dysku SSD:</strong> 1 TB</li>
+  <li><strong>Karta graficzna:</strong> Intel Iris Xe Graphics</li>
+  <li><strong>Typ ekranu:</strong> Matowy, LED, WVA</li>
+  <li><strong>Przekątna ekranu:</strong> 15,6"</li>
+  <li><strong>Rozdzielczość ekranu:</strong> 1920 x 1080 (Full HD)</li>
+  <li><strong>Dźwięk:</strong> Wbudowane głośniki stereo, Wbudowany mikrofon</li>
+  <li><strong>Złącza:</strong> USB 2.0 - 1 szt., USB 3.2 Gen. 1 - 2 szt., USB 3.2 Gen. 1 - 2 szt., HDMI 1.4 - 1 szt., DC-in (wejście zasilania) - 1 szt.</li>
+  <li><strong>Podświetlana klawiatura:</strong> Nie</li>
+  <li><strong>Pojemność baterii:</strong> 3-komorowa, 3467 mAh</li>
+  <li><strong>System operacyjny:</strong> Microsoft Windows 11 Home</li>
+  <li><strong>Łączność:</strong> Wi-Fi 6, Moduł Bluetooth 5.2</li>
+</div>
+<div class="product-image">
+  <img src="./img_product_page/dell.png"class="dell" >
+</div>
+</div>
+<div class="images">
+<img src="./img_product_page/ADYY_1_201811098627323.jpg" >
+<img src="./img_product_page/laptop2.webp" >
+</div>
+<div class="images">
+<img src="./img_product_page/laptop1.webp" >
+<img src="./img_product_page/laptop3.webp" >
+</div>
+</section>
+</section>
+
+</main> 
+  <div class="phone-buttons">
+      <section class="buttons">
     <button class="button">Dodaj do koszyka</button>
     <button class="button">Kup i zapłać</button>
-</section> 
-<section class="footer-section" id="footer-container"></section>  
+</section>
+  </div> 
+  <div class="phone-footer">
+      <a href="#">Dostawy<img src="./svg/delivery.svg" data-light="./svg/delivery.svg" data-dark="./svg/deliverylight.svg" alt="Przesyłki" class="icon-look"></a>
+      <a href="#">Ulubione<img src="./svg/fav.svg" data-light="./svg/fav.svg" data-dark="./svg/favlight.svg" alt="Ulubione" class="icon-look"></a>
+      <a href="#">Wiadomości<img src="./svg/chat.svg" data-light="./svg/chat.svg" data-dark="./svg/chatlight.svg" alt="Czat" class="icon-look"></a>
+      <a href="#">Dostępność<img src="./svg/persondost.svg" onclick="toggleMenu()"></a>
+      <a href="#">Powiadomienia<img src="./svg/notify.svg" data-light="./svg/notify.svg" data-dark="./svg/notifylight.svg" alt="Powiadomienia" class="icon-look"></a>
+      <a href="#">Koszyk<img src="./svg/orders.svg" data-light="./svg/orders.svg" data-dark="./svg/orderslight.svg" alt="Mój koszyk" class="icon-look"></a>
+  </div> 
+<section class="footer-section" id="footer-container"></section> 
   `;
     } else {
       document.getElementById('product-container').innerHTML =  `
@@ -903,6 +919,10 @@ if (product) {
     <img src="./img_product_page/arrow.png"class="arrow">
   </section>
   <p class="stan">dostawa: pojutrze</p>
+
+  <div class="accessibility-fab" onclick="toggleMenu()">
+  <img src="./svg/persondost.svg" alt="Dostępność">
+</div><span class="smart" tabindex="0">bądź<img src="./svg/smart.svg" alt="bądź smart"></span>
 </section>
 
 <section class=" right-box">
