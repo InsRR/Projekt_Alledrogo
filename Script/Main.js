@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const imageElement = document.getElementById("imagebanner");
     const changeButton = document.getElementById("arrow-banner");
 
-    function changeImage() {
+     function changeImage() {
         currentIndex = (currentIndex + 1) % images.length; 
         updateDots();
         imageElement.src = images[currentIndex]; 
