@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         darkModeToggle.checked = (savedTheme === 'dark');
     }
 
-    // 🔽 Accessibility button and menu setup
     const fab = document.createElement("div");
     fab.className = "accessibility-fab";
     fab.innerHTML = '<img src="./svg/persondost.svg" alt="Dostępność">';
@@ -92,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(menu);
 });
 
-// ✅ Funkcja dostępna globalnie — działa z onclick="toggleMenu()"
 function toggleMenu() {
     const menu = document.getElementById("accessibilityMenu");
     if (menu) {
